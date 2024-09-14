@@ -46,18 +46,6 @@ function Navbar() {
 
 
         })
-   
-
-
-
-
-        // links.map(link => {
-        //     if (link.path === hash) {
-        //         e.target.classList.add("bg-red-500")
-        //     }
-
-        // })
-
 
     }
 
@@ -70,15 +58,8 @@ function Navbar() {
     }, [navLinksRef, hash])
 
 
-
-
-
-
-
-
-
     return (
-        <nav className="px-36 sticky top-0 py-3 bg-gray-200">
+        <nav className="px-36 sticky top-0 z-50 py-3 bg-gray-200">
 
             <div className="flex items-center justify-between">
                 <div className="">
@@ -102,7 +83,19 @@ function Navbar() {
                                 <NavLink
                                     className={'flex py-2 px-4'}
                                     to={link.path}
-                                // onClick={(e) => {handleActiveLink(e)}}
+                                    onClick={() => {
+                                        // e.preventDefault();
+                                        if (link.path === '/') {
+                                            window.scrollTo({ top: 0 })
+                                            return
+                                        }
+                                        
+                                        const section = document.querySelector(link.path);
+
+                                        
+                                        
+                                        window.scrollTo({ top: section.offsetTop -80 })
+                                    }}
                                 >
                                     {link.text}
                                     <motion.div
@@ -125,6 +118,7 @@ function Navbar() {
 
 
                 </div>
+
 
 
 

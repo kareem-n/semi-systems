@@ -1,0 +1,5 @@
+
+
+.line {
+    @apply w-20 h-[2px] bg-blue-500 my-5
+}

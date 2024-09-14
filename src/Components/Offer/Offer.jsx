@@ -1,0 +1,81 @@
+import dcoin from '../../assets/dcoin.png'
+import ethereum from '../../assets/ethereum-02.png.png'
+import circle from '../../assets/circle-01.png'
+import x from '../../assets/x.png'
+
+
+function Offer() {
+    return (
+        <div className="px-48 py-20 relative">
+
+
+            <div className="relative border border-black/30 shadow-xl rounded-3xl p-20 flex flex-col items-center">
+                <div className="text-6xl flex flex-row-reverse gap-x-4  font-extrabold">
+                    <h2
+                        style={{
+                            background: 'linear-gradient(90deg,#4b00f9,purple)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                        }}
+                    >
+                        تنسي العروض!
+                    </h2>
+                    <span className="text-black">لا</span>
+                </div>
+
+                <p className="mt-7 w-1/2 text-center text-lg text-gray-600">
+                    يوفر لكم اشتراككم في النشرة البريدية الحصول على آخر التحديثات في مجال التسويق
+                    الرقمي والتعرف على جديدنا من الخدمات والعروض أولا بأول
+                </p>
+
+                <div className="mt-5 flex gap-x-5">
+                    <input
+                        placeholder="أدخل بريدك الالكتروني"
+                        type="text"
+                        className="bg-gray-300 placeholder:text-gray-500 px-5 py-3 w-[250px] rounded-full"
+                    />
+                    <button
+                        style={{
+                            background: 'linear-gradient(90deg , #6401f7, #dc00ed )'
+                        }}
+                        className="bg-red-500 text-white px-10 rounded-full text-xl ">اشتراك</button>
+                </div>
+
+                <img src={dcoin} className='absolute left-[200px] bottom-20' alt="" />
+                <img src={ethereum} className='absolute right-[150px] bottom-24' alt="" />
+                <img src={circle} className='absolute left-[150px] top-20' alt="" />
+                <img src={x} className='absolute right-[100px] top-14' alt="" />
+
+
+
+
+
+
+            </div>
+
+            <div className="absolute top-full left-1/2 -translate-x-1/2">
+                <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clipPath="url(#clip0_350_2894)">
+                        <path d="M1.62012 3.57822L14.4135 16.3715L27.2068 3.57822L40.0001 16.3715L52.7934 3.57822L65.5868 16.3715L78.3801 3.57822" stroke="url(#paint0_linear_350_2894)" strokeWidth="4.26444" />
+                    </g>
+                    <defs>
+                        <linearGradient id="paint0_linear_350_2894" x1="1.62012" y1="9.97488" x2="78.3801" y2="9.97488" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#3754FB" />
+                            <stop offset="1" stopColor="#FC01FF" />
+                        </linearGradient>
+                        <clipPath id="clip0_350_2894">
+                            <rect width="79.9583" height="19.19" fill="white" transform="translate(0.0205078 0.379883)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+
+            </div>
+
+
+
+
+        </div >
+    )
+}
+
+export default Offer

@@ -1,0 +1,7 @@
+.taps {
+  @apply mt-4 flex justify-center gap-x-4;
+}
+
+.taps button {
+    @apply px-5 py-3 font-bold 
+}
