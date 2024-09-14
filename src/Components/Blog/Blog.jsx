@@ -2,12 +2,12 @@ import { useEffect, useState } from "react"
 import client, { urlFor } from "../../Utils/Sanity"
 import { Bars } from "react-loader-spinner";
 import { MdDateRange } from "react-icons/md";
-import styles from './blog.module.css' ;
+import styles from './blog.module.css';
 
 
 function Blog() {
 
-  const {customEllipsis} = styles
+  const { customEllipsis } = styles
 
   const [blogData, setBlogData] = useState(null);
   const [Loading, setLoading] = useState(false);
@@ -48,8 +48,8 @@ function Blog() {
 
         <div className="mt-10">
           {
-            Loading ? <div className="">
-              <Bars />
+            Loading ? <div className="flex items-center justify-center min-h-[100px]">
+              <Bars color="background-color: rgb(0 114 250)" />
             </div> : blogData && <div className="flex items-center gap-x-5">
               {
                 blogData.map(blog => {
@@ -83,8 +83,8 @@ function Blog() {
                       </div>
 
                       <p
-                       
-                        className={customEllipsis +" mt-3 text-gray-600 w-full"}>
+
+                        className={customEllipsis + " mt-3 text-gray-600 w-full"}>
                         {
                           blog.description
                         }
