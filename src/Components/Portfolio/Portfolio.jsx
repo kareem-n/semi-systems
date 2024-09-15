@@ -9,6 +9,7 @@ import AppDesign from './AppDesign';
 import Logo from './Logo';
 import Brand from './Brand';
 import Graphics from './Graphics';
+import Reveal from '../Reveal/Reveal';
 
 
 function Portfolio() {
@@ -30,7 +31,8 @@ function Portfolio() {
   const renderContent = () => {
     switch (activeTap) {
       case 0:
-        return <AnimatePresence><All /></AnimatePresence>;
+        return <All />
+          ;
       case 1:
         return <WebDesign />;
       case 2:
@@ -80,8 +82,7 @@ function Portfolio() {
         </div>
         <motion.div className="grid grid-cols-3 items-start gap-10 min-h-[300px] mt-10">
 
-          {/* <AnimatePresence>
-          </AnimatePresence> */}
+
           <AnimatePresence>
             {renderContent()}
           </AnimatePresence>

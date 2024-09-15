@@ -2,6 +2,7 @@ import man from '../../assets/Man.png'
 import Darsh from '../../assets/Darsh.png'
 import ActiveClients from '../../assets/ActiveClients.png'
 import stars from '../../assets/Elements.png'
+import Reveal from '../Reveal/Reveal'
 
 
 function About() {
@@ -28,30 +29,48 @@ function About() {
 
             <div className="flex items-center gap-x-36">
 
-                <div className="w-1/2 relative">
-                    <img src={man} className='relative z-10' alt="" />
 
-                    <img src={Darsh} className='absolute z-10 bottom-0 left-0 -translate-x-1/2' alt="" />
-                    <img src={ActiveClients} className='absolute z-10 bottom-1/2 left-0 -translate-x-1/2' alt="" />
-                    <img src={stars} className='absolute top-0 left-1/2 -translate-x-2/3 ' alt="" />
-                </div>
+                <Reveal>
+                    <div className="w-1/2 relative">
+                        <img src={man} className='relative z-10' alt="" />
+
+                        <img src={Darsh} className='absolute z-10 bottom-0 left-0 -translate-x-1/2' alt="" />
+                        <img src={ActiveClients} className='absolute z-10 bottom-1/2 left-0 -translate-x-1/2' alt="" />
+                        <img src={stars} className='absolute top-0 left-1/2 -translate-x-2/3 ' alt="" />
+                    </div>
+                </Reveal>
+
+
 
                 <div className="w-1/2">
-                    <h2 className='text-3xl font-bold text-red-600'>
-                        من نحن
-                    </h2>
-                    <h3 className='mt-5 text-5xl'>
-                        نحن أكثر من مجرد <br />
-                        وكالة رقمية في العالم
-                    </h3>
-                    <p className='mt-4 text-lg text-gray-600'>
-                        نحن نسعى لتقديم حلول مبتكرة وشاملة للتحديات التي تواجه عملك
-                        من خلال خبراتنا الواسعة ورؤيتنا الإبداعية في بناء وتطوير العلامات التجارية،
-                        لنمنحك أفضل النتائج الممكنة ونحقق لك التفوق في عالم التسويق الرقمي.
-                    </p>
-                    <button className='bg-red-600 hover:bg-red-700 text-white text-lg font-bold px-10 py-3 rounded-full mt-5'>
-                        تواصل معنا
-                    </button>
+                    <Reveal>
+                        <h2 className='text-3xl font-bold text-red-600'>
+                            من نحن
+                        </h2>
+                    </Reveal>
+
+                    <Reveal>
+                        <h3 className='mt-5 text-5xl'>
+                            نحن أكثر من مجرد <br />
+                            وكالة رقمية في العالم
+                        </h3>
+                    </Reveal>
+
+                    <Reveal>
+                        <p className='mt-4 text-lg text-gray-600'>
+                            نحن نسعى لتقديم حلول مبتكرة وشاملة للتحديات التي تواجه عملك
+                            من خلال خبراتنا الواسعة ورؤيتنا الإبداعية في بناء وتطوير العلامات التجارية،
+                            لنمنحك أفضل النتائج الممكنة ونحقق لك التفوق في عالم التسويق الرقمي.
+                        </p>
+                    </Reveal>
+
+                    <Reveal>
+                        <button className='bg-red-600 hover:bg-red-700 text-white text-lg font-bold px-10 py-3 rounded-full mt-5'>
+                            تواصل معنا
+                        </button>
+                    </Reveal>
+
+
                 </div>
 
             </div>

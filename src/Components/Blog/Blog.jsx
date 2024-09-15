@@ -50,7 +50,7 @@ function Blog() {
           {
             Loading ? <div className="flex items-center justify-center min-h-[100px]">
               <Bars color="background-color: rgb(0 114 250)" />
-            </div> : blogData && <div className="flex items-center gap-x-5">
+            </div> : blogData && <div className="flex justify-center items-center gap-x-5">
               {
                 blogData.map(blog => {
                   let time = new Date(blog._createdAt);

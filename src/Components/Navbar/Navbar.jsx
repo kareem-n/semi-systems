@@ -1,16 +1,20 @@
 import { FiSend } from "react-icons/fi";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from './navbar.module.css';
-import { motion } from 'framer-motion';
-import { button } from "framer-motion/client";
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef } from "react";
-import { array } from "yup";
-
 
 
 function Navbar() {
 
     const { navLink } = styles;
+
+    const { scrollY } = useScroll();
+
+    const bgColor = useTransform(scrollY, [0, 200], [0, 0.8])
+    const textColor = useTransform(scrollY, [0, 200], ['#000','#fff' ]);
+    const bgColorReturn = useTransform(bgColor, (alpha) => `rgba(0,0,0,${alpha})`);
+
 
     const navLinksRef = useRef();
 
@@ -55,11 +59,19 @@ function Navbar() {
             handleActiveLink();
         }
 
+
+
+
     }, [navLinksRef, hash])
 
 
     return (
-        <nav className="px-36 sticky top-0 z-50 py-3 bg-gray-200">
+        <motion.nav
+            style={{
+                color: textColor,
+                backgroundColor: bgColorReturn
+            }}
+            className="px-36 sticky top-0 z-50 py-3 shadow-xl ">
 
             <div className="flex items-center justify-between">
                 <div className="">
@@ -89,12 +101,12 @@ function Navbar() {
                                             window.scrollTo({ top: 0 })
                                             return
                                         }
-                                        
+
                                         const section = document.querySelector(link.path);
 
-                                        
-                                        
-                                        window.scrollTo({ top: section.offsetTop -80 })
+
+
+                                        window.scrollTo({ top: section.offsetTop - 80 })
                                     }}
                                 >
                                     {link.text}
@@ -135,7 +147,7 @@ function Navbar() {
 
 
 
-        </nav>
+        </motion.nav>
     )
 }
 

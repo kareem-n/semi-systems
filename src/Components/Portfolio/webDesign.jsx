@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 
 import item from '../../assets/Ourportfolio.png';
+import Reveal from '../Reveal/Reveal';
 
 function WebDesign() {
 
@@ -33,7 +34,9 @@ function WebDesign() {
             }}
 
             key={index} className="shadow-xl">
-            <img src={item} alt="" />
+            <Reveal>
+                <img src={item} className='block w-full' alt="" />
+            </Reveal>
             
         </motion.div>
 
