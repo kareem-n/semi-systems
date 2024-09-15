@@ -6,7 +6,7 @@ const client = new SanityClient({
   dataset: "production",
   useCdn: true,
   token:
-    "skYlX4rlokGaLdYNkuqA8i8eSXE0Nr9isFQaJnkEGbm5ooPQEzfc5fZox5wWMkroC1tm19ydLig4SKG62TqGXLs4JPh6JjZtVBVXQUnVXj21f8IQzc3ONCHLan6FfC9AEDiaIqh1FHiyDnUz01uY4Lt2Jk8aglhXL1r4tATlpmw70pgYpOex",
+    "skH9tLogHuiCurQnlXeJb1t5Oj0G0eXyVM41mptEo8k3J8Gnpl4LBtIaOehpI5AYE4slmfLBgCqIjEQFFubZQC7QsPKM6wBOQbXyg1G0sZokMJBk4mIfCT7QdWjTCBwRXg95NUBxVthdcPhYFHgmiOPBAR5luJBWLzjlka94SJS5AS377yRt",
   apiVersion: "2024-09-14",
 });
 
