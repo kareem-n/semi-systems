@@ -79,10 +79,10 @@ function Navbar() {
             className="px-5 lg:px-36 sticky w-full top-0 z-50 py-3 shadow-xl ">
 
             <div className="flex items-center justify-between relative z-50">
-                <div className="flex lg:hidden items-center gap-x-4">
+                <div className="flex items-center gap-x-4">
                     <div
                         onClick={() => setMenuOpen(!menuOpen)}
-                        className="rounded-full">
+                        className="rounded-full lg:hidden">
 
                         {
                             menuOpen ? (
@@ -221,7 +221,7 @@ function Navbar() {
                                 scale: 0
                             }}
 
-                            className="mt-24 flex flex-col gap-4 items-center ">
+                            className="mt-24 flex flex-col gap-4 items-center bg-white">
                             {
                                 links.map((link, index) => <NavLink
                                     onClick={() => {
