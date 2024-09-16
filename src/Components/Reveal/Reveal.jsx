@@ -13,7 +13,7 @@ function Reveal({ children }) {
 
     useEffect(() => {
 
-        if (inView) {
+    if (inView) {
             animate.start({
                 opacity: 1,
                 x: 0

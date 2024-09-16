@@ -10,6 +10,7 @@ import Logo from './Logo';
 import Brand from './Brand';
 import Graphics from './Graphics';
 import Reveal from '../Reveal/Reveal';
+import Slider from 'react-slick';
 
 
 function Portfolio() {
@@ -48,9 +49,30 @@ function Portfolio() {
     }
   };
 
+  var settings = {
+    arrow: false,
+    infinite: true,
+    slidesToShow: 6,
+    swipeToSlide: true,
+    // rtl: true,
+    responsive: [{
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        // infinite: false,
+        // arrows: false,
+        swipeToSlide: true,
+        // rtl: true,
+      }
+    }]
+
+
+
+  };
+
 
   return (
-    <div id='portfolio' className="px-48 my-20">
+    <div id='portfolio' className="md:px-48 px-5 my-20 overflow-x-hidden">
       <div className="">
 
         <div className="text-center">
@@ -60,27 +82,25 @@ function Portfolio() {
 
 
           <div className={taps}>
-
-            {
-              tapsButtons.map((button, index) =>
-                <button
-                  onClick={() => {
-                    setActiveTap(index)
-                  }}
-                  className={`${index == activeTap ? 'border-b-2 border-theme text-theme' : 'text-gray-500'} `}
-                  key={index}>
-                  {button}
-                </button>
-              )
-            }
-
-
+            <Slider className='' {...settings}>
+              {
+                tapsButtons.map((button, index) =>
+                  <button
+                    onClick={() => {
+                      setActiveTap(index)
+                    }}
+                    className={`${index == activeTap ? 'border-b-2 border-theme text-theme' : 'text-gray-500'} `}
+                    key={index}>
+                    {button}
+                  </button>
+                )
+              }
+            </Slider>
 
           </div>
 
-
         </div>
-        <motion.div className="grid grid-cols-3 items-start gap-10 min-h-[300px] mt-10">
+        <motion.div className="grid lg:grid-cols-3 items-start gap-10 min-h-[300px] mt-10">
 
 
           <AnimatePresence>

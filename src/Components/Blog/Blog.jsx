@@ -33,11 +33,11 @@ function Blog() {
 
 
   return (
-    <div id="blog" className=" px-48 my-64">
+    <div id="blog" className=" md:px-48 px-5 my-64">
 
       <div className="">
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col flex-wrap md:flex-nowrap items-center">
           <h2 className="font-bold text-4xl">
             المدونة
           </h2>
@@ -48,9 +48,9 @@ function Blog() {
 
         <div className="mt-10">
           {
-            Loading ? <div className="flex items-center justify-center min-h-[100px]">
+            Loading ? <div className="flex items-center flex-wrap md:flex-nowrap justify-center min-h-[100px]">
               <Bars color="background-color: rgb(0 114 250)" />
-            </div> : blogData && <div className="flex justify-center items-center gap-x-5">
+            </div> : blogData && <div className="flex flex-wrap md:flex-nowrap gap-y-44 justify-center items-center gap-x-5">
               {
                 blogData.map(blog => {
                   let time = new Date(blog._createdAt);

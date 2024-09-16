@@ -45,7 +45,7 @@ function Feedback() {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <div className="px-48 my-20">
+    <div className="md:px-48 px-5 my-20">
 
       <div className="">
 
@@ -59,11 +59,11 @@ function Feedback() {
           </p>
         </div>
 
-        <div className="px-20 relative">
-          <img src={world} alt="" />
-          <div className="flex flex-col items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-[400px]">
+        <div className=" md:px-20 px-5 relative mt-20">
+          <img src={world} className='relative z-10' alt="" />
+          <div className="flex flex-col items-center absolute top-1/2 left-1/2 bg-white z-50 -translate-x-1/2 -translate-y-1/2 w-full md:w-[400px]">
 
-            <Slider className='w-full overflow-visible bg-white rounded-3xl border border-theme' {...settings}>
+            <Slider className='w-full overflow-visible  rounded-3xl border border-theme' {...settings}>
 
               <div className='relative rounded-3xl pt-12 px-5 '>
                 <div className="relative overflow-y-visible ">

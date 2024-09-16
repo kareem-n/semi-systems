@@ -8,14 +8,14 @@ import Reveal from '../Reveal/Reveal';
 
 function Hero() {
     return (
-        <div className="px-48 min-h-screen py-14">
+        <div className="px-5 md:px-48 min-h-screen py-14">
 
-            <div className="flex items-center">
+            <div className="flex md:flex-nowrap flex-wrap items-center gap-y-10 ">
 
 
-                <div className="w-1/2">
+                <div className="md:w-1/2 w-full ">
 
-                    <Reveal> <p className='text-subTextColor font-bold'>نحوّل رؤيتك إلى نجاح</p>  </Reveal>
+                    <Reveal> <p className='text-subTextColor font-bold' >نحوّل رؤيتك إلى نجاح</p>  </Reveal>
 
 
                     <Reveal>
@@ -42,7 +42,7 @@ function Hero() {
 
                 </div>
 
-                <div className="w-2/3 relative">
+                <div className="md:w-2/3 w-full relative">
                     <img src={hero} className='relative z-10' alt="" />
                     <img src={downEll} className='absolute top-1/3 w-20' alt="" />
                     <img src={rightEll} className='absolute bottom-1/4 left-0 w-24' alt="" />

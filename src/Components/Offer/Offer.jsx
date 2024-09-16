@@ -6,11 +6,11 @@ import x from '../../assets/x.png'
 
 function Offer() {
     return (
-        <div className="px-48 py-20 relative">
+        <div className="md:px-48 px-5 py-20 relative">
 
 
-            <div className="relative border border-black/30 shadow-xl rounded-3xl p-20 flex flex-col items-center">
-                <div className="text-6xl flex flex-row-reverse gap-x-4  font-extrabold">
+            <div className="relative border border-black/30 shadow-xl rounded-3xl md:p-20 py-10 flex flex-col items-center">
+                <div className="text-4xl md:text-6xl flex flex-row-reverse gap-x-4  font-extrabold">
                     <h2
                         style={{
                             background: 'linear-gradient(90deg,#4b00f9,purple)',
@@ -23,28 +23,28 @@ function Offer() {
                     <span className="text-black">لا</span>
                 </div>
 
-                <p className="mt-7 w-1/2 text-center text-lg text-gray-600">
+                <p className="relative z-10 mt-7 md:w-1/2 px-5 text-center text-lg text-gray-600">
                     يوفر لكم اشتراككم في النشرة البريدية الحصول على آخر التحديثات في مجال التسويق
                     الرقمي والتعرف على جديدنا من الخدمات والعروض أولا بأول
                 </p>
 
-                <div className="mt-5 flex gap-x-5">
+                <div className="mt-5 flex flex-wrap md:flex-nowrap gap-x-5 gap-y-5 px-5">
                     <input
                         placeholder="أدخل بريدك الالكتروني"
                         type="text"
-                        className="bg-gray-300 placeholder:text-gray-500 px-5 py-3 w-[250px] rounded-full"
+                        className="bg-gray-300 placeholder:text-gray-500 px-5 md:w-2/3 py-3 rounded-full"
                     />
                     <button
                         style={{
                             background: 'linear-gradient(90deg , #6401f7, #dc00ed )'
                         }}
-                        className="bg-red-500 text-white px-10 rounded-full text-xl ">اشتراك</button>
+                        className="bg-red-500 text-white px-10 rounded-full md:text-xl md:w-1/3 py-3 md:py-0">اشتراك</button>
                 </div>
 
-                <img src={dcoin} className='absolute left-[200px] bottom-20' alt="" />
-                <img src={ethereum} className='absolute right-[150px] bottom-24' alt="" />
-                <img src={circle} className='absolute left-[150px] top-20' alt="" />
-                <img src={x} className='absolute right-[100px] top-14' alt="" />
+                <img src={dcoin} className='absolute left-[40px] md:left-[200px] bottom-16 md:bottom-20' alt="" />
+                <img src={ethereum} className='absolute right-0 z-0 md:right-[150px] bottom-36' alt="" />
+                <img src={circle} className='absolute left-10 md:left-[150px] top-20' alt="" />
+                <img src={x} className='absolute right-10 md:right-[100px] top-14' alt="" />
 
 
 

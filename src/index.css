@@ -11,7 +11,8 @@ html {
 
 body {
   direction: rtl ;
-  @apply bg-mainBg text-black ;
+  @apply bg-mainBg text-black;
   font-family:  "Inter", sans-serif;
+  overflow-x: hidden;
 }
 

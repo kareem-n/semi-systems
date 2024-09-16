@@ -13,17 +13,17 @@ import Reveal from '../Reveal/Reveal'
 
 function WhyUs() {
     return (
-        <div className="px-48 py-20 my-20">
+        <div className="md:px-48 px-5 py-20 my-20">
 
-            <div className="flex flex-row-reverse items-center">
+            <div className="flex flex-wrap md:flex-nowrap gap-y-10 flex-row-reverse items-center">
 
-                <div className="w-1/2">
+                <div className="md:w-1/2 order-1">
                     <Reveal>
                         <img src={topLeft} alt="" />
                     </Reveal>
                 </div>
 
-                <div className="w-1/2 ">
+                <div className="md:w-1/2 w-full">
                     <Reveal>
                         <h2 className='font-bold text-4xl'>
                             <span className="block">لماذا
@@ -33,9 +33,9 @@ function WhyUs() {
                     </Reveal>
 
 
-                    <div className=" flex items-start flex-col gap-x-0 gap-y-6 mt-5">
+                    <div className=" flex md:items-start flex-col gap-x-0 gap-y-6 mt-5">
                         <Reveal>
-                            <div className="bg-white w-[400px] shadow-lg rounded-2xl flex items-center gap-x-5 px-6 py-4">
+                            <div className="bg-white md:w-[400px]  shadow-lg rounded-2xl flex items-center gap-x-5 px-6 py-4">
                                 <div className="relative w-[60px] h-[50px] flex justify-center items-center">
                                     <img src={VectorYellow} className='absolute inset-0' alt="" />
                                     <div className="relative text-yellow-500">
@@ -50,7 +50,7 @@ function WhyUs() {
                         </Reveal>
 
                         <Reveal>
-                            <div className="bg-white w-[400px] shadow-lg rounded-2xl flex items-center gap-x-5 px-6 py-4">
+                            <div className="bg-white md:w-[400px] shadow-lg rounded-2xl flex items-center gap-x-5 px-6 py-4">
                                 <div className="relative w-[60px] h-[50px] flex items-center justify-center">
                                     <img src={VectorGreen} className='absolute inset-0 ' alt="" />
                                     <div className="relative text-green-200">
@@ -65,7 +65,7 @@ function WhyUs() {
                         </Reveal>
 
                         <Reveal>
-                            <div className="bg-white w-[400px] shadow-lg rounded-2xl flex items-center gap-x-5 px-6 py-4">
+                            <div className="bg-white md:w-[400px] shadow-lg rounded-2xl flex items-center gap-x-5 px-6 py-4">
                                 <div className="relative w-[60px] h-[50px] flex items-center justify-center overflow-hidden">
                                     <img src={VectorPurple} className='absolute inset-0' alt="" />
                                     <div className="relative text-purple-300">
@@ -93,16 +93,16 @@ function WhyUs() {
 
                 </div>
             </div>
-            <div className="flex items-center gap-x-10 mt-20">
+            <div className="flex items-center flex-wrap md:flex-nowrap gap-y-14 gap-x-10 mt-20">
 
-                <div className="w-1/2">
+                <div className="md:w-1/2 w-full">
                     <Reveal>
                         <img src={DownRight} alt="" />
 
                     </Reveal>
                 </div>
 
-                <div className="w-1/2 ">
+                <div className="md:w-1/2 w-full ">
 
 
                     <Reveal>
@@ -128,7 +128,7 @@ function WhyUs() {
                         </div>
                     </Reveal>
 
-                    <div className="grid grid-cols-2 gap-x-10 gap-y-5 mt-5">
+                    <div className="grid md:grid-cols-2 gap-x-10 gap-y-3 md:gap-y-5 mt-5">
                         <Reveal>
                             <div className="bg-white shadow-xl rounded-lg px-4 py-3 flex items-center gap-x-5">
                                 <FaCheck color='green' />

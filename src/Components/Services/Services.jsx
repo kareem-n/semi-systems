@@ -30,7 +30,7 @@ function Services() {
   const { line } = styles;
 
   return (
-    <div id='services' className="px-48 mb-20 relative z-10">
+    <div id='services' className="md:px-48 px-5 mb-20 relative z-10">
       <div className="absolute top-0 right-0 -z-10">
         <img src={roket} alt="" />
       </div>
@@ -54,7 +54,7 @@ function Services() {
 
         </div>
 
-        <div className="mt-10 grid grid-cols-3 gap-10">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
           {/*  */}
           <Reveal>
             <motion.div

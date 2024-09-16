@@ -25,14 +25,14 @@ function Footer() {
 
     return (
         <div
-            className="bg-white p-20  border-t-2 border-theme/20"
+            className="bg-white p-10 md:p-20 border-t-2 border-theme/20"
         >
-            <div className="grid grid-cols-4 gap-x-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-10">
                 <div className="">
                     <h2 className="text-4xl text-theme">
                         Logo
                     </h2>
-                    <p className="mt-4 text-gray-500 pl-20">
+                    <p className="mt-4 text-gray-500 md:pl-20">
                         هناك حقيقة مثبتة منذ زمن طويل وهي أن
                         المحتوى المقروء لصفحة ما سيلهي القارئ
                         عن التركيز على الشكل الخارجي.
@@ -96,16 +96,16 @@ function Footer() {
                         </div>
                     </div>
                     <div className="flex mt-4 gap-x-5">
-                        <div className="bg-theme p-3 cursor-pointer rounded-full text-white hover:bg-themeHovered">
-                            <FaFacebook />
+                        <div className="bg-theme md:p-3 p-2 cursor-pointer rounded-full text-white hover:bg-themeHovered">
+                            <FaFacebook  />
                         </div>
-                        <div className="bg-theme p-3 cursor-pointer rounded-full text-white hover:bg-themeHovered">
+                        <div className="bg-theme md:p-3 p-2 cursor-pointer rounded-full text-white hover:bg-themeHovered">
                             <FaTwitter />
                         </div>
-                        <div className="bg-theme p-3 cursor-pointer rounded-full text-white hover:bg-themeHovered">
+                        <div className="bg-theme md:p-3 p-2 cursor-pointer rounded-full text-white hover:bg-themeHovered">
                             <FaLinkedin />
                         </div>
-                        <div className="bg-theme p-3 cursor-pointer rounded-full text-white hover:bg-themeHovered">
+                        <div className="bg-theme md:p-3 p-2 cursor-pointer rounded-full text-white hover:bg-themeHovered">
                             <FaInstagram />
                         </div>
                     </div>

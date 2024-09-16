@@ -7,7 +7,7 @@ import Reveal from '../Reveal/Reveal'
 
 function About() {
     return (
-        <div id='about' className='px-48 py-20 relative'>
+        <div id='about' className='md:px-48 px-5 py-20 relative'>
 
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                 <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,22 +27,24 @@ function About() {
 
             </div>
 
-            <div className="flex items-center gap-x-36">
+            <div className="flex items-center flex-wrap md:flex-nowrap gap-x-36">
 
+                <div className="md:w-1/2 w-full relative">
 
                 <Reveal>
-                    <div className="w-1/2 relative">
-                        <img src={man} className='relative z-10' alt="" />
+                        <div>
+                            <img src={man} className='relative z-10 w-full' alt="" />
+                            {/* <img src={Darsh} className='hidden md:block absolute z-10 bottom-0 left-0 -translate-x-1/2' alt="" /> */}
+                            {/* <img src={ActiveClients} className='absolute z-10 bottom-1/2 md:left-full right-0 w-[150px] md:-translate-x-1/2' alt="" /> */}
+                            {/* <img src={stars} className='absolute top-0 left-1/2 -translate-x-2/3 ' alt="" /> */}
+                        </div>
 
-                        <img src={Darsh} className='absolute z-10 bottom-0 left-0 -translate-x-1/2' alt="" />
-                        <img src={ActiveClients} className='absolute z-10 bottom-1/2 left-0 -translate-x-1/2' alt="" />
-                        <img src={stars} className='absolute top-0 left-1/2 -translate-x-2/3 ' alt="" />
-                    </div>
-                </Reveal>
+                    </Reveal>
+                </div>
 
 
 
-                <div className="w-1/2">
+                <div className="md:w-1/2 w-full ">
                     <Reveal>
                         <h2 className='text-3xl font-bold text-red-600'>
                             من نحن

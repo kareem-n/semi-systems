@@ -12,7 +12,7 @@ function Banner() {
             }}
             className="my-20 h-[400px]">
 
-            <div className="px-48 h-full flex items-center justify-center">
+            <div className="md:px-48 px-5 text-center md:text-left h-full flex items-center justify-center">
                 <div className="flex flex-col items-center">
 
                     <h2 className='text-6xl text-center font-bold'>
