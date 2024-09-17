@@ -6,10 +6,10 @@ import x from '../../assets/x.png'
 
 function Offer() {
     return (
-        <div className="md:px-48 px-5 py-20 relative">
+        <div className="md:px-48 px-5 py-14 relative">
 
 
-            <div className="relative border border-black/30 shadow-xl rounded-3xl md:p-20 py-10 flex flex-col items-center">
+            <div className="relative  rounded-3xl md:p-20 py-10 flex flex-col items-center">
                 <div className="text-4xl md:text-6xl flex flex-row-reverse gap-x-4  font-extrabold">
                     <h2
                         style={{
@@ -23,7 +23,7 @@ function Offer() {
                     <span className="text-black">لا</span>
                 </div>
 
-                <p className="relative z-10 mt-7 md:w-1/2 px-5 text-center text-lg text-gray-600">
+                <p className="relative z-10 mt-7 md:w-1/2 px-5 text-center font-bold text-lg text-gray-600">
                     يوفر لكم اشتراككم في النشرة البريدية الحصول على آخر التحديثات في مجال التسويق
                     الرقمي والتعرف على جديدنا من الخدمات والعروض أولا بأول
                 </p>
@@ -32,7 +32,7 @@ function Offer() {
                     <input
                         placeholder="أدخل بريدك الالكتروني"
                         type="text"
-                        className="bg-gray-300 placeholder:text-gray-500 px-5 md:w-2/3 py-3 rounded-full"
+                        className="bg-zinc-300 shadow-lg outline-none border border-transparent focus:border-theme placeholder:text-gray-500 px-5 w-full py-3 rounded-lg"
                     />
                     <button
                         style={{
@@ -53,7 +53,7 @@ function Offer() {
 
             </div>
 
-            <div className="absolute top-full left-1/2 -translate-x-1/2">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                 <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_350_2894)">
                         <path d="M1.62012 3.57822L14.4135 16.3715L27.2068 3.57822L40.0001 16.3715L52.7934 3.57822L65.5868 16.3715L78.3801 3.57822" stroke="url(#paint0_linear_350_2894)" strokeWidth="4.26444" />

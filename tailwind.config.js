@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         mainBg: "#f9fafc",
-        theme: "#0072fa",
+        theme: "#2057C2",
         subTextColor: "#f461a6",
         themeHovered: "#4573d8",
       },

@@ -9,7 +9,6 @@ import AppDesign from './AppDesign';
 import Logo from './Logo';
 import Brand from './Brand';
 import Graphics from './Graphics';
-import Reveal from '../Reveal/Reveal';
 import Slider from 'react-slick';
 
 

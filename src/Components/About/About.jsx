@@ -7,9 +7,9 @@ import Reveal from '../Reveal/Reveal'
 
 function About() {
     return (
-        <div id='about' className='md:px-48 px-5 py-20 relative'>
+        <div id='about' className='bg-gray-200 md:px-48 px-5 py-20 relative'>
 
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+            {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                 <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_350_2913)">
                         <path d="M1.62012 3.19833L14.4135 15.9917L27.2068 3.19833L40.0001 15.9917L52.7934 3.19833L65.5868 15.9917L78.3801 3.19833" stroke="url(#paint0_linear_350_2913)" strokeWidth="4.26444" />
@@ -25,7 +25,7 @@ function About() {
                     </defs>
                 </svg>
 
-            </div>
+            </div> */}
 
             <div className="flex items-center flex-wrap md:flex-nowrap gap-x-36">
 
@@ -34,9 +34,9 @@ function About() {
                 <Reveal>
                         <div>
                             <img src={man} className='relative z-10 w-full' alt="" />
-                            {/* <img src={Darsh} className='hidden md:block absolute z-10 bottom-0 left-0 -translate-x-1/2' alt="" /> */}
-                            {/* <img src={ActiveClients} className='absolute z-10 bottom-1/2 md:left-full right-0 w-[150px] md:-translate-x-1/2' alt="" /> */}
-                            {/* <img src={stars} className='absolute top-0 left-1/2 -translate-x-2/3 ' alt="" /> */}
+                            <img src={Darsh} className='hidden md:block absolute z-10 bottom-0 left-0 -translate-x-1/2' alt="" />
+                            <img src={ActiveClients} className='absolute z-10 bottom-1/2 md:left-full right-0 w-[150px] md:-translate-x-1/2' alt="" />
+                            <img src={stars} className='absolute top-0 left-1/2 -translate-x-2/3 ' alt="" />
                         </div>
 
                     </Reveal>

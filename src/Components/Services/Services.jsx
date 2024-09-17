@@ -31,7 +31,7 @@ function Services() {
 
   return (
     <div id='services' className="md:px-48 px-5 mb-20 relative z-10">
-      <div className="absolute top-0 right-0 -z-10">
+      <div className="absolute bottom-full translate-y-1/2 right-0 -z-10">
         <img src={roket} alt="" />
       </div>
 
@@ -282,8 +282,8 @@ function Services() {
         </div>
       </div>
 
-      <div className="absolute top-full left-0 translate-x-1/2">
-        <img src={servicesStars} alt="" />
+      <div className="absolute bottom-0 translate-y-1/2 left-0 -z-10 translate-x-1/3">
+        <img src={servicesStars} className='w-[80%]' alt="" />
       </div>
 
 

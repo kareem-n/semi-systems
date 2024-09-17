@@ -5,7 +5,6 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useRef, useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
-import { menu } from "framer-motion/client";
 
 
 function Navbar() {
@@ -63,9 +62,6 @@ function Navbar() {
         if (navLinksRef) {
             handleActiveLink();
         }
-
-
-
 
     }, [navLinksRef, hash])
 
@@ -202,7 +198,7 @@ function Navbar() {
             <AnimatePresence>
                 {
                     menuOpen &&
-                    <div className="fixed inset-0">
+                    <div className="fixed z-40 inset-0">
 
                         <motion.div
                             initial={{
@@ -221,14 +217,21 @@ function Navbar() {
                                 scale: 0
                             }}
 
-                            className="mt-24 flex flex-col gap-4 items-center bg-white">
+                            className="mt-[60px] pt-5 flex flex-col items-center bg-white h-full text-black">
                             {
                                 links.map((link, index) => <NavLink
                                     onClick={() => {
                                         setMenuOpen(false)
+                                        if (link.path === '/') {
+                                            window.scrollTo({ top: 0 })
+                                            return
+                                        }
 
+                                        const section = document.querySelector(link.path);
+
+                                        window.scrollTo({ top: section.offsetTop - 80 })
                                     }}
-                                    className={'text-xl'} to={link.path} key={index}>
+                                    className={'text-xl border-b w-full text-center py-5'} to={link.path} key={index}>
                                     {
                                         link.text
                                     }

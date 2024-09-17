@@ -16,11 +16,12 @@ function Footer() {
     ]
 
     const importantLinks = [
-        'من نحن',
-        'اتصل بنا',
-        'سياسة الخصوصية',
-        'اتفاقية الاستخدام',
-        'منطقة العملاء'
+        { text: 'من نحن', path: '/#about' },
+        { text: 'اتصل بنا', path: '/#' },
+        { text: 'سياسة الخصوصية', path: '/' },
+        { text: 'اتفاقية الاستخدام', path: '/' },
+        { text: 'منطقة العملاء', path: '/' }
+
     ]
 
     return (
@@ -61,9 +62,23 @@ function Footer() {
 
                     <div className="flex flex-col items-start gap-y-3 mt-5 text-md">
                         {
-                            importantLinks.map((link, index) => <NavLink key={index} className={'flex  hover:text-themeHovered items-center gap-x-2'}>
+                            importantLinks.map((link, index) => <NavLink 
+                            to={link.path}
+                             key={index} 
+                             className={'flex  hover:text-themeHovered items-center gap-x-2'}
+                             
+                             onClick={()=> {
+                                if (link.path === '/') {
+                                    window.scrollTo({ top: 0 })
+                                    return
+                                }
+
+                                const section = document.querySelector(link.path);
+
+                                window.scrollTo({ top: section.offsetTop - 80 })
+                             }}>
                                 <FaExternalLinkAlt size={12} className="text-gray-500" />
-                                {link}
+                                {link.text}
                             </NavLink>)
                         }
                     </div>
@@ -97,7 +112,7 @@ function Footer() {
                     </div>
                     <div className="flex mt-4 gap-x-5">
                         <div className="bg-theme md:p-3 p-2 cursor-pointer rounded-full text-white hover:bg-themeHovered">
-                            <FaFacebook  />
+                            <FaFacebook />
                         </div>
                         <div className="bg-theme md:p-3 p-2 cursor-pointer rounded-full text-white hover:bg-themeHovered">
                             <FaTwitter />

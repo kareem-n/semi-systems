@@ -1,5 +1,5 @@
 
-import { FaArrowDown, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight} from 'react-icons/fa';
 import world from '../../assets/WorldMap.png';
 import person from '../../assets/person.png';
 
@@ -17,7 +17,8 @@ function Feedback() {
         // style={{...style , display: "block", background: "red" }}
         onClick={onClick}
       >
-        <FaArrowRight />
+        <FaAngleRight />
+
       </div>
     );
   }
@@ -30,7 +31,7 @@ function Feedback() {
         // style={{...style , display: "block", background: "red" }}
         onClick={onClick}
       >
-        <FaArrowLeft />
+        <FaAngleLeft />
       </div>
     );
   }
@@ -45,7 +46,7 @@ function Feedback() {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <div className="md:px-48 px-5 my-20">
+    <div className="md:px-48 px-5 mt-20">
 
       <div className="">
 
@@ -54,14 +55,14 @@ function Feedback() {
             آراء عملائنا
           </h2>
 
-          <p className="text-gray-600 text-lg mt-2">
+          <p className="text-gray-600 text-lg">
             نستمد نجاحنا من رضا عملائنا عن الخدمات التي نقدمها
           </p>
         </div>
 
-        <div className=" md:px-20 px-5 relative mt-20">
+        <div className=" md:px-20 px-5 relative mt-10">
           <img src={world} className='relative z-10' alt="" />
-          <div className="flex flex-col items-center absolute top-1/2 left-1/2 bg-white z-50 -translate-x-1/2 -translate-y-1/2 w-full md:w-[400px]">
+          <div className="flex flex-col items-center absolute top-1/2 left-1/2 bg-white z-40 -translate-x-1/2 -translate-y-1/2 w-full md:w-[400px]">
 
             <Slider className='w-full overflow-visible  rounded-3xl border border-theme' {...settings}>
 
@@ -86,7 +87,7 @@ function Feedback() {
 
               </div>
              
-              <div className='relative rounded-3xl pt-12 px-5 '>
+              <div className='relative rounded-3xl px-5 '>
                 <div className="relative overflow-y-visible ">
                   <img src={person} className='w-[70px] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2
                 ' alt="" />

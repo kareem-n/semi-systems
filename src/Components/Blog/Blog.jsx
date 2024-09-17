@@ -33,9 +33,9 @@ function Blog() {
 
 
   return (
-    <div id="blog" className=" md:px-48 px-5 my-64">
+    <div id="blog" className=" md:px-48 px-5 my-20 pb-64 relative">
 
-      <div className="">
+      <div>
 
         <div className="flex flex-col flex-wrap md:flex-nowrap items-center">
           <h2 className="font-bold text-4xl">
@@ -101,9 +101,25 @@ function Blog() {
         </div>
 
 
-
       </div>
 
+      <div className="absolute top-full left-1/2 -translate-x-1/2">
+        <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clipPath="url(#clip0_350_2894)">
+            <path d="M1.62012 3.57822L14.4135 16.3715L27.2068 3.57822L40.0001 16.3715L52.7934 3.57822L65.5868 16.3715L78.3801 3.57822" stroke="url(#paint0_linear_350_2894)" strokeWidth="4.26444" />
+          </g>
+          <defs>
+            <linearGradient id="paint0_linear_350_2894" x1="1.62012" y1="9.97488" x2="78.3801" y2="9.97488" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#3754FB" />
+              <stop offset="1" stopColor="#FC01FF" />
+            </linearGradient>
+            <clipPath id="clip0_350_2894">
+              <rect width="79.9583" height="19.19" fill="white" transform="translate(0.0205078 0.379883)" />
+            </clipPath>
+          </defs>
+        </svg>
+
+      </div>
 
     </div >
   )

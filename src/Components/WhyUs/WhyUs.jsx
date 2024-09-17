@@ -17,7 +17,7 @@ function WhyUs() {
 
             <div className="flex flex-wrap md:flex-nowrap gap-y-10 flex-row-reverse items-center">
 
-                <div className="md:w-1/2 order-1">
+                <div className="md:w-1/2">
                     <Reveal>
                         <img src={topLeft} alt="" />
                     </Reveal>
@@ -27,8 +27,8 @@ function WhyUs() {
                     <Reveal>
                         <h2 className='font-bold text-4xl'>
                             <span className="block">لماذا
-                            </span>
-                            يجب أن تختارنا؟
+                            </span> يجب أن 
+                            <span className='bg-green-500 text-white px-3 mx-1 rounded-lg'> تختارنا؟ </span> 
                         </h2>
                     </Reveal>
 
@@ -107,7 +107,7 @@ function WhyUs() {
 
                     <Reveal>
                         <h2 className='text-5xl font-bold'>
-                            <span className='bg-orange-500/30 px-3'>نحقق</span> لك النجاح الرقمي <br />
+                            <span className='bg-orange-500/30 rounded-lg leading-normal px-3'>نحقق</span> لك النجاح الرقمي <br />
                             في أي وقت, ومن أي مكان
                         </h2>
                     </Reveal>
@@ -130,8 +130,8 @@ function WhyUs() {
 
                     <div className="grid md:grid-cols-2 gap-x-10 gap-y-3 md:gap-y-5 mt-5">
                         <Reveal>
-                            <div className="bg-white shadow-xl rounded-lg px-4 py-3 flex items-center gap-x-5">
-                                <FaCheck color='green' />
+                            <div className=" rounded-lg px-4 py-3 flex items-center gap-x-5">
+                                <FaCheck color='#2057C2' />
                                 <p className='font-bold pl-5'>
                                     إدارة بياناتك بسهولة
                                 </p>
@@ -140,8 +140,8 @@ function WhyUs() {
 
 
                         <Reveal>
-                            <div className="bg-white shadow-xl rounded-lg px-4 py-3 flex items-center gap-x-5">
-                                <FaCheck color='green' />
+                            <div className=" rounded-lg px-4 py-3 flex items-center gap-x-5">
+                                <FaCheck color='#2057C2' />
                                 <p className='font-bold pl-5'>
                                     دائمًا على اتصال
                                 </p>
@@ -149,8 +149,8 @@ function WhyUs() {
                         </Reveal>
 
                         <Reveal>
-                            <div className="bg-white shadow-xl rounded-lg px-4 py-3 flex items-center gap-x-5">
-                                <FaCheck color='green' />
+                            <div className=" rounded-lg px-4 py-3 flex items-center gap-x-5">
+                                <FaCheck color='#2057C2' />
                                 <p className='font-bold pl-5'>
                                     تعزيز العمل الجماعي
                                 </p>
@@ -160,8 +160,8 @@ function WhyUs() {
 
                         <Reveal>
 
-                            <div className="bg-white shadow-xl rounded-lg px-4 py-3 flex items-center gap-x-5">
-                                <FaCheck color='green' />
+                            <div className=" rounded-lg px-4 py-3 flex items-center gap-x-5">
+                                <FaCheck color='#2057C2' />
                                 <p className='font-bold pl-5'>
                                     تحليلات شاملة لأداء أفضل
                                 </p>
@@ -170,7 +170,11 @@ function WhyUs() {
 
                         <Reveal>
 
-                            <button className='bg-orange-600 hover:bg-orange-700 text-white text-lg rounded-lg px-5 py-3 mt-5'>
+                            <button
+                            style={{
+                                background: 'linear-gradient(180deg, #FF7241 0%, #FA4000 100%)'
+
+                            }} className=' text-white text-lg rounded-lg px-8 py-2 mt-0'>
                                 ابدأ اليوم معنا
                             </button>
                         </Reveal>

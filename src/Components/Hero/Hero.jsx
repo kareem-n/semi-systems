@@ -20,7 +20,7 @@ function Hero() {
 
                     <Reveal>
                         <h2 className='text-5xl font-extrabold leading-normal mt-2'>
-                            نحقق لك  <span className='relative z-10 '>النمو
+                            نحقق لك  <span className='relative z-10 text-green-600'>النمو
                                 <img src={ell} className='absolute -z-10 inset-0 scale-150 mt-3 mr-1 -rotate-12' alt="" />
                                 <img src={ell2} className='absolute -z-10 inset-0 scale-150 mt-3 mr-1 rotate-12' alt="" />
                             </span> <br />
