@@ -9,7 +9,7 @@ function Offer() {
         <div className="md:px-48 px-5 py-14 relative">
 
 
-            <div className="relative  rounded-3xl md:p-20 py-10 flex flex-col items-center">
+            <div className="relative rounded-3xl md:p-20 py-10 flex flex-col items-center">
                 <div className="text-4xl md:text-6xl flex flex-row-reverse gap-x-4  font-extrabold">
                     <h2
                         style={{
@@ -28,7 +28,7 @@ function Offer() {
                     الرقمي والتعرف على جديدنا من الخدمات والعروض أولا بأول
                 </p>
 
-                <div className="mt-5 flex flex-wrap md:flex-nowrap gap-x-5 gap-y-5 px-5">
+                <div className="mt-5 w-full flex flex-wrap md:flex-nowrap gap-x-5 gap-y-5 md:px-48 px-5">
                     <input
                         placeholder="أدخل بريدك الالكتروني"
                         type="text"
