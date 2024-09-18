@@ -1,7 +1,7 @@
 # SEMI-SYSTEMS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>
+   Tech solutions & Market analysis Company
+</h3>
 
-Currently, two official plugins are available:
-
-![app]('semi.png')
+![app](semi.png)
