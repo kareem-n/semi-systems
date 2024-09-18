@@ -15,7 +15,7 @@ function WhyUs() {
     return (
         <div className="md:px-48 px-5 py-20 my-20">
 
-            <div className="flex flex-wrap md:flex-nowrap gap-y-10 flex-row-reverse items-center">
+            <div className="flex flex-wrap md:flex-nowrap gap-y-14 flex-row-reverse items-center">
 
                 <div className="md:w-1/2">
                     <Reveal>
@@ -33,7 +33,7 @@ function WhyUs() {
                     </Reveal>
 
 
-                    <div className=" flex md:items-start flex-col gap-x-0 gap-y-6 mt-5">
+                    <div className=" flex md:items-start flex-col gap-x-0 gap-y-6 mt-10">
                         <Reveal>
                             <div className="bg-white md:w-[400px]  shadow-lg rounded-2xl flex items-center gap-x-5 px-6 py-4">
                                 <div className="relative w-[60px] h-[50px] flex justify-center items-center">

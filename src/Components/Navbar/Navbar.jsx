@@ -26,8 +26,8 @@ function Navbar() {
 
     const links = [
         { path: '/', text: 'الصفحه الرئيسية' },
-        { path: '#about', text: 'من نحن' },
         { path: '#services', text: 'الخدمات' },
+        { path: '#about', text: 'من نحن' },
         { path: '#portfolio', text: 'أعمالنا' },
         { path: '#blog', text: 'المدونة' },
         { path: '#faq', text: 'الاسئلة الشائعة' },
@@ -72,7 +72,7 @@ function Navbar() {
                 color: textColor,
                 backgroundColor: bgColorReturn
             }}
-            className="px-5 lg:px-36 sticky w-full top-0 z-50 py-3 shadow-xl ">
+            className="px-5 lg:px-36 border-none outline-none sticky w-full top-0 left-0 right-0 z-50 py-3 shadow-xl">
 
             <div className="flex items-center justify-between relative z-50">
                 <div className="flex items-center gap-x-4">
@@ -155,7 +155,7 @@ function Navbar() {
 
 
 
-                                        window.scrollTo({ top: section.offsetTop - 80 })
+                                        window.scrollTo({ top: section.offsetTop - 100 })
                                     }}
                                 >
                                     {link.text}

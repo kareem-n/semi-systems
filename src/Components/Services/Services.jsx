@@ -32,7 +32,7 @@ function Services() {
   return (
     <div id='services' className="md:px-48 px-5 mb-20 relative z-10">
       <div className="absolute bottom-full translate-y-1/2 right-0 -z-10">
-        <img src={roket} alt="" />
+        <img src={roket} className='w-[150px] md:w-auto' alt="" />
       </div>
 
       <div className="">

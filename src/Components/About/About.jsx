@@ -27,16 +27,16 @@ function About() {
 
             </div> */}
 
-            <div className="flex items-center flex-wrap md:flex-nowrap gap-x-36">
+            <div className="flex items-center flex-wrap md:flex-nowrap gap-x-36 gap-y-10">
 
-                <div className="md:w-1/2 w-full relative">
+                <div className="md:w-1/2 w-full relative ">
 
                 <Reveal>
                         <div>
-                            <img src={man} className='relative z-10 w-full' alt="" />
+                            <img src={man} className='relative z-40 w-full' alt="" />
                             <img src={Darsh} className='hidden md:block absolute z-10 bottom-0 left-0 -translate-x-1/2' alt="" />
-                            <img src={ActiveClients} className='absolute z-10 bottom-1/2 md:left-full right-0 w-[150px] md:-translate-x-1/2' alt="" />
-                            <img src={stars} className='absolute top-0 left-1/2 -translate-x-2/3 ' alt="" />
+                            <img src={ActiveClients} className='absolute z-40 bottom-1/2 md:left-full right-0 w-[150px] md:-translate-x-1/2' alt="" />
+                            <img src={stars} className='absolute top-0 right-0 md:right-auto left-0 md:left-1/2 md:-translate-x-2/3 ' alt="" />
                         </div>
 
                     </Reveal>

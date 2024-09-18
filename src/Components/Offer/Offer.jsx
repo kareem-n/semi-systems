@@ -17,6 +17,7 @@ function Offer() {
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                         }}
+                        className='relative z-40'
                     >
                         تنسي العروض!
                     </h2>

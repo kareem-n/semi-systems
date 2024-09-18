@@ -46,7 +46,7 @@ function Feedback() {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <div className="md:px-48 px-5 mt-20">
+    <div className="md:px-48 px-5 mt-20 pb-10">
 
       <div className="">
 
@@ -60,7 +60,7 @@ function Feedback() {
           </p>
         </div>
 
-        <div className=" md:px-20 px-5 relative mt-10">
+        <div className=" md:px-20 px-5 relative mt-20 md:mt-10">
           <img src={world} className='relative z-10' alt="" />
           <div className="flex flex-col items-center absolute top-1/2 left-1/2 bg-white z-40 -translate-x-1/2 -translate-y-1/2 w-full md:w-[400px]">
 
