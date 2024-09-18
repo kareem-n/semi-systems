@@ -13,7 +13,7 @@ import Reveal from '../Reveal/Reveal'
 
 function WhyUs() {
     return (
-        <div className="md:px-48 px-5 py-20 my-20">
+        <div className="md:px-48 px-5 py-20">
 
             <div className="flex flex-wrap md:flex-nowrap gap-y-14 flex-row-reverse items-center">
 
@@ -95,7 +95,7 @@ function WhyUs() {
             </div>
             <div className="flex items-center flex-wrap md:flex-nowrap gap-y-14 gap-x-10 mt-20">
 
-                <div className="md:w-1/2 w-full">
+                <div className="md:w-3/5 w-full">
                     <Reveal>
                         <img src={DownRight} alt="" />
 
