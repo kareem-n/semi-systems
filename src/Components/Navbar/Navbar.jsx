@@ -1,10 +1,11 @@
 import { FiSend } from "react-icons/fi";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from './navbar.module.css';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
+import logo from '../../assets/logo.png';
 
 
 function Navbar() {
@@ -124,9 +125,19 @@ function Navbar() {
 
 
                     </div>
-                    <h2 className="font-bold text-2xl">
-                        لوجو
-                    </h2>
+                    <div className="">
+                        <Link
+                            onClick={() => [
+                                window.scrollTo({
+                                    top: 0
+                                })
+                            ]}
+                            to={'/'}
+
+                        >
+                            <img src={logo} className="w-[55px]" alt="" />
+                        </Link>
+                    </div>
                 </div>
 
                 <div ref={navLinksRef} className="lg:flex hidden items-center gap-x-2">
