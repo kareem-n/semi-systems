@@ -71,7 +71,7 @@ function Portfolio() {
 
 
   return (
-    <div id='portfolio' className="md:px-48 px-5 md:my-48 overflow-x-hidden">
+    <div id='portfolio' className="md:px-48 px-5 md:my-20 overflow-x-hidden">
       <div className="">
 
         <div className="text-center">
