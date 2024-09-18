@@ -33,7 +33,7 @@ function Offer() {
                     <input
                         placeholder="أدخل بريدك الالكتروني"
                         type="text"
-                        className="bg-zinc-300 shadow-lg outline-none border border-transparent focus:border-theme placeholder:text-gray-500 px-5 w-full py-3 rounded-lg"
+                        className="bg-zinc-300 shadow-sm shadow-gray-700 outline-none border border-transparent focus:border-theme placeholder:text-gray-500 px-5 w-full py-3 rounded-lg"
                     />
                     <button
                         style={{
