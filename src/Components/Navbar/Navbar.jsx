@@ -23,15 +23,15 @@ function Navbar() {
 
     const navLinksRef = useRef();
 
-    const { hash } = useLocation();
+    const { hash, pathname } = useLocation();
 
     const links = [
         { path: '/', text: 'الصفحه الرئيسية' },
-        { path: '#services', text: 'الخدمات' },
-        { path: '#about', text: 'من نحن' },
-        { path: '#portfolio', text: 'أعمالنا' },
-        { path: '#blog', text: 'المدونة' },
-        { path: '#faq', text: 'الاسئلة الشائعة' },
+        { path: '/services', text: 'الخدمات' },
+        { path: '/about', text: 'من نحن' },
+        { path: '/portfolio', text: 'أعمالنا' },
+        { path: '/blog', text: 'المدونة' },
+        { path: '/faq', text: 'الاسئلة الشائعة' },
     ]
 
 
@@ -43,8 +43,8 @@ function Navbar() {
         children.map((link) => {
 
             link.children[0].classList.remove("bg-theme", "text-white")
-            if (hash !== '') {
-                if (link.children[0].href.includes(hash)) {
+            if (pathname !== '/') {
+                if (link.children[0].href.includes(pathname)) {
                     link.children[0].classList.add("bg-theme", "text-white")
                 }
 
@@ -64,7 +64,7 @@ function Navbar() {
             handleActiveLink();
         }
 
-    }, [navLinksRef, hash])
+    }, [navLinksRef, pathname])
 
 
     return (
@@ -155,19 +155,19 @@ function Navbar() {
                                 <NavLink
                                     className={'flex py-2 px-4'}
                                     to={link.path}
-                                    onClick={() => {
-                                        // e.preventDefault();
-                                        if (link.path === '/') {
-                                            window.scrollTo({ top: 0 })
-                                            return
-                                        }
+                                // onClick={() => {
+                                //     // e.preventDefault();
+                                //     if (link.path === '/') {
+                                //         window.scrollTo({ top: 0 })
+                                //         return
+                                //     }
 
-                                        const section = document.querySelector(link.path);
+                                //     const section = document.querySelector(link.path);
 
 
 
-                                        window.scrollTo({ top: section.offsetTop - 100 })
-                                    }}
+                                //     window.scrollTo({ top: section.offsetTop - 100 })
+                                // }}
                                 >
                                     {link.text}
                                     <motion.div
