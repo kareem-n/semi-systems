@@ -24,35 +24,41 @@ import Reveal from '../Reveal/Reveal';
 
 
 
-function Services() {
+function Services({ rocket }) {
 
 
   const { line } = styles;
 
   return (
     <div id='services' className="md:px-48 px-5 mb-20 relative z-10">
-      <div className="absolute bottom-full translate-y-1/2 right-0 -z-10">
-        <img src={roket} className='w-[150px] md:w-auto' alt="" />
-      </div>
+      {
+        rocket && <div className="absolute bottom-full translate-y-1/2 right-0 -z-10">
+          <img src={roket} className='w-[150px] md:w-auto' alt="" />
+        </div>
+      }
+
 
       <div className="">
-        <div className="text-center">
-          <Reveal>
-            <h2 className='text-4xl font-bold'>خدماتنا</h2>
-          </Reveal>
+        {
+          rocket && <div className="text-center">
+            <Reveal>
+              <h2 className='text-4xl font-bold'>خدماتنا</h2>
+            </Reveal>
 
-          <Reveal>
-            <p className='text-lg mt-3 text-gray-600'>
-              <span className="block">
-                الحل الأمثل لأعمالك
-              </span>
-              <span className="block">
-                &quot;حقق أهدافك التسويقية وازدهر بفضل شراكتك معنا، حيث نقدم حلولاً مبتكرة تدفع بنجاح علامتك التجارية إلى الأمام.&quot;
-              </span>
-            </p>
-          </Reveal>
+            <Reveal>
+              <p className='text-lg mt-3 text-gray-600'>
+                <span className="block">
+                  الحل الأمثل لأعمالك
+                </span>
+                <span className="block">
+                  &quot;حقق أهدافك التسويقية وازدهر بفضل شراكتك معنا، حيث نقدم حلولاً مبتكرة تدفع بنجاح علامتك التجارية إلى الأمام.&quot;
+                </span>
+              </p>
+            </Reveal>
 
-        </div>
+          </div>
+        }
+
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
           {/*  */}

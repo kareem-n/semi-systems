@@ -14,7 +14,7 @@ function Home() {
     <div>
 
       <Hero />
-      <Services />
+      <Services rocket={true} />
       <About />
       <Offer />
       <WhyUs />
