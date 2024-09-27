@@ -6,6 +6,7 @@ import FAQ from "./Pages/FAQ/FAQ"
 import ServicesPage from "./Pages/FAQ/Services/Services"
 import PortfolioPage from "./Pages/Portfolio/Portfolio"
 import Blog from "./Pages/Blog/Blog"
+import Contact from "./Pages/Contact/Contact"
 
 
 
@@ -20,6 +21,7 @@ function App() {
         { path: '/portfolio', element: <PortfolioPage /> } ,
         { path: '/blog', element: <Blog /> } ,
         { path: '/faq', element: <FAQ /> } ,
+        { path: '/contact', element: <Contact /> } ,
       ]
     }
   ])

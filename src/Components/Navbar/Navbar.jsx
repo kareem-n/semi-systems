@@ -32,6 +32,7 @@ function Navbar() {
         { path: '/portfolio', text: 'أعمالنا' },
         { path: '/blog', text: 'المدونة' },
         { path: '/faq', text: 'الاسئلة الشائعة' },
+        
     ]
 
 
@@ -196,7 +197,7 @@ function Navbar() {
 
                 <div className="">
 
-                    <button
+                    <button 
 
                         className="bg-theme font-bold hover:bg-themeHovered text-white px-4 py-2 text-sm md:text-md lg:text-lg rounded-lg shadow-lg flex items-center gap-x-3 border border-transparent hover:border-gray-700 transition-all"
                     >
