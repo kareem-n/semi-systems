@@ -196,14 +196,16 @@ function Navbar() {
 
 
                 <div className="">
-
+                    <Link to="/contact">
                     <button 
+                    className="bg-theme font-bold hover:bg-themeHovered text-white px-4 py-2 text-sm md:text-md lg:text-lg rounded-lg shadow-lg flex items-center gap-x-3 border border-transparent hover:border-gray-700 transition-all"
+                >
+                    تواصل معنا
+                    <FiSend />
+                </button>
+                    </Link>
 
-                        className="bg-theme font-bold hover:bg-themeHovered text-white px-4 py-2 text-sm md:text-md lg:text-lg rounded-lg shadow-lg flex items-center gap-x-3 border border-transparent hover:border-gray-700 transition-all"
-                    >
-                        تواصل معنا
-                        <FiSend />
-                    </button>
+
 
                 </div>
             </div>
