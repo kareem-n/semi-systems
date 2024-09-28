@@ -8,9 +8,9 @@ interface props {
 }
 function PageBanner(props: props) {
   return (
-    <div className="relative flex items-center justify-center ">
+    <div className="relative flex items-center justify-center h-[300px] md:h-[400px]">
       <div className="absolute inset-0 bg-black/50"></div>
-      <img src={img} className="w-full" alt="" />
+      <img src={img} className="w-full h-full object-cover" alt="" />
       <div className="text-white absolute text-center  flex flex-col items-center">
         <h2 className="text-5xl capitalize">{props.head}</h2>
         <div className="mt-4 flex items-center gap-x-2 text-lg">
