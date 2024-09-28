@@ -26,7 +26,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className='phone flex items-center gap-3 '>
+                <div className='email flex items-center gap-3 '>
                   <div className='phonei bg-theme p-4  text-white text-2xl '>
                   <MdEmail />
                   </div>
@@ -36,7 +36,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className='phone flex items-center gap-3 '>
+                <div className='location flex items-center gap-3 '>
                   <div className='phonei bg-theme p-4 text-white text-2xl'>
                   <FaLocationDot />
                   </div>
@@ -67,7 +67,7 @@ const Contact = () => {
                       <input
                       type="text"
                       placeholder="اكتب الاسم هنا"
-                      className="mt-1 block w-full px-3 py-2 border rounded-2xl focus:outline-themeHovered"/>
+                      className="mt-1  block w-full px-3 py-2 border rounded-2xl focus:outline-themeHovered"/>
                       </div>
             <div>
               <label className="block text-xl font-bold"> البريد الالكتروني :</label>
