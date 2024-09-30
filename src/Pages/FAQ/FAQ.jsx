@@ -332,7 +332,7 @@ const FAQ = () => {
   var settings = {
     arrow: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 5,
     swipeToSlide: true,
     // rtl: true,
     responsive: [{

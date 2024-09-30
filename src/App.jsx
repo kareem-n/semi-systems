@@ -7,6 +7,7 @@ import ServicesPage from "./Pages/FAQ/Services/Services"
 import PortfolioPage from "./Pages/Portfolio/Portfolio"
 import Blog from "./Pages/Blog/Blog"
 import Contact from "./Pages/Contact/Contact"
+import Web from "./Pages/Web/Web"
 
 
 
@@ -18,6 +19,7 @@ function App() {
         { index: true, element: <Home /> } ,
         { path: '/about', element: <About /> } ,
         { path: '/services', element: <ServicesPage /> } ,
+        { path: '/web', element: <Web /> } ,
         { path: '/portfolio', element: <PortfolioPage /> } ,
         { path: '/blog', element: <Blog /> } ,
         { path: '/faq', element: <FAQ /> } ,

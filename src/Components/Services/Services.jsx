@@ -19,6 +19,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 
 import { motion } from 'framer-motion'
 import Reveal from '../Reveal/Reveal';
+import { Link } from 'react-router-dom';
 
 
 
@@ -63,39 +64,42 @@ function Services({ rocket }) {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
           {/*  */}
           <Reveal>
-            <motion.div
-              initial='start'
-              whileHover='end'
+            <Link to={'/web'}>
+              <motion.div
+                initial='start'
+                whileHover='end'
 
-              className="bg-white border-2 border-transparent hover:border-theme/30 transition-all col-span-1 shadow-xl  py-8 rounded-3xl">
-              <div className="flex items-center justify-center relative z-10">
-                <img src={vectorBlue} className='blur-md absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-16' alt="" />
-                <motion.div
-                  variants={{
-                    start: { scale: 1 },
-                    end: { scale: 1.2 },
-                  }}
-                  transition={{
-                    duration: 0.2
-                  }}
-                >
-                  <CgWebsite
-                    size={60}
-                  />
-                </motion.div>
+                className="bg-white border-2 border-transparent hover:border-theme/30 transition-all col-span-1 shadow-xl  py-8 rounded-3xl">
+                <div className="flex items-center justify-center relative z-10">
+                  <img src={vectorBlue} className='blur-md absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-16' alt="" />
+                  <motion.div
+                    variants={{
+                      start: { scale: 1 },
+                      end: { scale: 1.2 },
+                    }}
+                    transition={{
+                      duration: 0.2
+                    }}
+                  >
+                    <CgWebsite
+                      size={60}
+                    />
+                  </motion.div>
 
-              </div>
-              <div className="text-center mt-8 flex flex-col items-center px-10">
-                <h3 className='text-xl font-bold'>تصميم المواقع الإلكترونية</h3>
-                <div className={line}></div>
+                </div>
+                <div className="text-center mt-8 flex flex-col items-center px-10">
+                  <h3 className='text-xl font-bold'>تصميم المواقع الإلكترونية</h3>
+                  <div className={line}></div>
 
-                <p className=''>
-                  نقوم بتصميم وبرمجة المواقع التعريفية
-                  والخدمية والمتاجر الإلكترونية
-                </p>
+                  <p className=''>
+                    نقوم بتصميم وبرمجة المواقع التعريفية
+                    والخدمية والمتاجر الإلكترونية
+                  </p>
 
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            </Link>
+
           </Reveal>
 
           {/*  */}
