@@ -104,6 +104,7 @@ function Services({ rocket }) {
 
           {/*  */}
           <Reveal>
+            <Link to="/busniness">
             <motion.div
               initial='start'
               whileHover='end'
@@ -133,12 +134,13 @@ function Services({ rocket }) {
 
               </div>
             </motion.div>
+            </Link>
           </Reveal>
           {/*  */}
 
           <Reveal>
 
-
+            <Link to='/mobile'>
             <motion.div
               initial='start'
               whileHover='end'
@@ -172,11 +174,12 @@ function Services({ rocket }) {
               </div>
             </motion.div>
             {/*  */}
+            </Link>
           </Reveal>
 
           <Reveal>
 
-
+            <Link to="/marketing">
             <motion.div
               initial='start'
               whileHover='end'
@@ -210,11 +213,12 @@ function Services({ rocket }) {
               </div>
             </motion.div>
             {/*  */}
+            </Link>
           </Reveal>
 
           <Reveal>
 
-
+            <Link to='/seo'>
             <motion.div
               initial='start'
               whileHover='end'
@@ -248,11 +252,12 @@ function Services({ rocket }) {
               </div>
             </motion.div>
             {/*  */}
+            </Link>
           </Reveal>
 
           <Reveal>
 
-
+            <Link to ="/social ">
             <motion.div
               initial='start'
               whileHover='end'
@@ -285,6 +290,7 @@ function Services({ rocket }) {
 
               </div>
             </motion.div>
+            </Link>
           </Reveal>
 
 

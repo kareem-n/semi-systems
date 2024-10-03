@@ -8,6 +8,11 @@ import PortfolioPage from "./Pages/Portfolio/Portfolio"
 import Blog from "./Pages/Blog/Blog"
 import Contact from "./Pages/Contact/Contact"
 import Web from "./Pages/Web/Web"
+import Busniness from "./Pages/Busniness/Busniness"
+import Mobile from "./Pages/Mobile/Mobile"
+import Marketing from "./Pages/Marketing/Marketing"
+import SEO from "./Pages/SEO/SEO"
+import Social from "./Pages/Sochial/Social"
 
 
 
@@ -20,6 +25,11 @@ function App() {
         { path: '/about', element: <About /> } ,
         { path: '/services', element: <ServicesPage /> } ,
         { path: '/web', element: <Web /> } ,
+        { path: '/busniness', element: <Busniness /> } ,
+        { path: '/mobile', element: <Mobile /> } ,
+        { path: '/marketing', element: <Marketing /> } ,
+        { path: '/seo', element: <SEO /> } ,
+        { path: '/social ', element: <Social /> } ,
         { path: '/portfolio', element: <PortfolioPage /> } ,
         { path: '/blog', element: <Blog /> } ,
         { path: '/faq', element: <FAQ /> } ,

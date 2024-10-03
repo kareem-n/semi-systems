@@ -28,7 +28,7 @@ function Intro({
     <div className="my-20">
       <div className="grid grid-cols-2 items-center gap-x-10">
         <div className="">
-          <p className="text-pink-500 text-md capitalize">
+          <p className="text-pink-500 text-md font-bold capitalize">
             {firstContentRight.slogan}
           </p>
 
@@ -49,7 +49,7 @@ function Intro({
         </div>
 
         <div className="">
-          <p className="text-pink-500 text-md capitalize">
+          <p className="text-pink-500 text-md font-bold capitalize">
             {secondContentLeft.slogan}
           </p>
 

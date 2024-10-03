@@ -4,6 +4,7 @@ import { FaAngleDown } from "react-icons/fa";
 interface Items {
   title: string;
   desc: string;
+ 
 }
 
 interface Props {
