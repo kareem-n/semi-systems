@@ -170,6 +170,8 @@ const Busniness = () => {
 
 
     const faqBusinessContent = [
+
+        
     ]
 
 

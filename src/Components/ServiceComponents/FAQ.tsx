@@ -3,8 +3,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 interface Items {
   title: string;
-  desc: string;
- 
+  desc: string[];
 }
 
 interface Props {
@@ -12,6 +11,7 @@ interface Props {
 }
 
 function FAQ({ items }: Props) {
+
   return (
     <div className="my-20 px-48 relative">
       <div className="flex flex-col items-center gap-5">
@@ -51,9 +51,18 @@ function FAQ({ items }: Props) {
               <FaAngleDown />
             </h3>
 
-            <p className="bg-theme my-3 rounded-2xl transition-all duration-300 text-white max-h-0 overflow-hidden">
-              <span className="inline-block rounded-xl p-5">{item.desc}</span>
-            </p>
+            <div className="max-h-0 overflow-hidden m-3 rounded-2xl transition-all duration-300">
+              <div className="py-3 bg-theme ">
+                {item.desc.map((des, index) => (
+                  <p
+                    key={index}
+                    className=" text-white p-1"
+                  >
+                    <span className="inline-block rounded-xl px-5">{des}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>
