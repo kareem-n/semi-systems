@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import logo from '../../assets/logo.png';
+import { FaAngleDoubleLeft, FaAngleDown } from "react-icons/fa";
 
 
 function Navbar() {
@@ -23,16 +24,36 @@ function Navbar() {
 
     const navLinksRef = useRef();
 
-    const { hash, pathname } = useLocation();
+    const { pathname } = useLocation();
 
     const links = [
         { path: '/', text: 'الصفحه الرئيسية' },
-        { path: '/services', text: 'الخدمات' },
+        {
+            path: '/services', text: 'الخدمات', children: [
+                {
+                    text: 'خدمات التسويق الإلكترونية', children: [
+                        { path: '/social', text: 'ادارة حسابات السوشيال ميديا' },
+                        { path: '/marketing', text: 'إدارة الحملات التسويقية' },
+                        { path: '/social', text: 'كتابة المحتوي' },
+                        { path: '/seo', text: 'تحسين محركات البحث' },
+                        { path: '/busniness', text: 'تصميم الهوية التجارية' },
+                    ]
+                },
+                {
+                    text: 'خدمات البرمجة و التصميم', children: [
+                        { path: '/web', text: 'تصميم مواقع الكترونية' },
+                        { path: '/mobile', text: 'تصميم تطبيقات الجوال' },
+                        { path: '/social', text: 'كتابة المحتوي' },
+                        { path: '/seo', text: 'تحسين محركات البحث' },
+                    ]
+                },
+            ]
+        },
         { path: '/about', text: 'من نحن' },
         { path: '/portfolio', text: 'أعمالنا' },
         { path: '/blog', text: 'المدونة' },
         { path: '/faq', text: 'الاسئلة الشائعة' },
-        
+
     ]
 
 
@@ -44,7 +65,9 @@ function Navbar() {
         children.map((link) => {
 
             link.children[0].classList.remove("bg-theme", "text-white")
+
             if (pathname !== '/') {
+
                 if (link.children[0].href.includes(pathname)) {
                     link.children[0].classList.add("bg-theme", "text-white")
                 }
@@ -144,46 +167,141 @@ function Navbar() {
                 <div ref={navLinksRef} className="lg:flex hidden items-center gap-x-2">
 
                     {
-                        links.map((link, index) =>
-                            <motion.div
+                        links.map((link, index) => {
+                            if (link.children) {
+                                return <motion.div
 
-                                initial='hidden'
-                                whileHover={'visible'}
+                                    initial='hidden'
+                                    whileHover={'visible'}
 
-                                key={index}
-                                className={navLink}
-                            >
-                                <NavLink
-                                    className={'flex py-2 px-4'}
-                                    to={link.path}
-                                // onClick={() => {
-                                //     // e.preventDefault();
-                                //     if (link.path === '/') {
-                                //         window.scrollTo({ top: 0 })
-                                //         return
-                                //     }
+                                    key={index}
+                                    className={navLink + ` `}
 
-                                //     const section = document.querySelector(link.path);
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.lastElementChild.classList.replace("hidden", "block")
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.lastElementChild.classList.replace("block", "hidden")
+                                    }}
 
-
-
-                                //     window.scrollTo({ top: section.offsetTop - 100 })
-                                // }}
                                 >
-                                    {link.text}
-                                    <motion.div
-                                        variants={{
-                                            hidden: { scale: 0, x: 50, y: 50 },
-                                            visible: { scale: 1, x: 0, y: 0 },
-                                        }}
+                                    <NavLink
+                                        className={'flex  rounded-br-xl rounded-tl-xl relative'}
+                                        to={link.path}
+                                    >
+                                        <div
+                                            className="py-2 px-4 relative flex items-center gap-x-2"
+                                        >
+                                            {link.text}
+                                            <FaAngleDown />
+                                        </div>
+
+                                        <motion.div
+                                            variants={{
+                                                hidden: { display: 'hidden', scale: 0, x: 50, y: 50 },
+                                                visible: { display: 'block', scale: 1, x: 0, y: 0 },
+                                            }}
 
 
-                                        className="absolute bg-theme inset-0 -z-10">
+                                            className="absolute bg-theme rounded-lg inset-0 -z-10">
 
-                                    </motion.div>
-                                </NavLink>
+                                        </motion.div>
+                                    </NavLink>
 
-                            </motion.div>
+                                    {
+                                        link.children && <div className="hidden text-white absolute right-0 top-full pt-3">
+
+                                            <div className="flex flex-col shadow-xl rounded-lg ">
+                                                {
+                                                    link.children.map((item, index) => <div
+                                                        key={index}
+                                                        // to={item.path}
+                                                        className="bg-theme hover:bg-themeHovered text-nowrap cursor-auto select-none w-full border-b border-b-gray-800 relative"
+
+                                                        onMouseEnter={(e) => {
+                                                            e.currentTarget.lastElementChild.classList.replace("hidden", "flex")
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            e.currentTarget.lastElementChild.classList.replace("flex", "hidden")
+                                                        }}
+                                                    >
+                                                        <div
+                                                            className="flex px-8  items-center py-2 gap-x-4">
+                                                            {item.text}
+                                                            <FaAngleDoubleLeft />
+                                                        </div>
+
+
+
+
+                                                        <div className="hidden bg-theme absolute right-full top-0  flex-col">
+                                                            {
+                                                                item.children?.map((fLink, index) => <Link
+                                                                    key={index}
+                                                                    to={fLink.path}
+                                                                    className="px-8 py-2 inline-block hover:bg-themeHovered"
+                                                                >
+                                                                    {fLink.text}
+                                                                </Link>)
+                                                            }
+                                                        </div>
+                                                    </div>
+
+
+                                                    )
+                                                }
+
+
+                                            </div>
+
+                                        </div>
+                                    }
+
+
+
+                                </motion.div>
+                            } else {
+                                return <motion.div
+
+                                    initial='hidden'
+                                    whileHover={'visible'}
+
+                                    key={index}
+                                    className={navLink + ` `}
+                                >
+                                    <NavLink
+                                        className={'flex  rounded-br-xl rounded-tl-xl relative'}
+                                        to={link.path}
+                                    >
+                                        <div
+                                            className="py-2 px-4 relative"
+                                        >
+                                            {link.text}
+                                        </div>
+
+
+
+
+
+
+                                        <motion.div
+                                            variants={{
+                                                hidden: { display: 'hidden', scale: 0, x: 50, y: 50 },
+                                                visible: { display: 'block', scale: 1, x: 0, y: 0 },
+                                            }}
+
+
+                                            className="absolute bg-theme rounded-lg inset-0 -z-10">
+
+                                        </motion.div>
+                                    </NavLink>
+
+
+
+                                </motion.div>
+                            }
+                        }
+
 
                         )
                     }
@@ -197,12 +315,12 @@ function Navbar() {
 
                 <div className="">
                     <Link to="/contact">
-                    <button 
-                    className="bg-theme font-bold hover:bg-themeHovered text-white px-4 py-2 text-sm md:text-md lg:text-lg rounded-lg shadow-lg flex items-center gap-x-3 border border-transparent hover:border-gray-700 transition-all"
-                >
-                    تواصل معنا
-                    <FiSend />
-                </button>
+                        <button
+                            className="bg-theme font-bold hover:bg-themeHovered text-white px-4 py-2 text-sm md:text-md lg:text-lg rounded-lg shadow-lg flex items-center gap-x-3 border border-transparent hover:border-gray-700 transition-all"
+                        >
+                            تواصل معنا
+                            <FiSend />
+                        </button>
                     </Link>
 
 
@@ -232,25 +350,82 @@ function Navbar() {
                             }}
 
                             className="mt-[60px] pt-5 flex flex-col items-center bg-white h-full text-black">
-                            {
-                                links.map((link, index) => <NavLink
-                                    onClick={() => {
-                                        setMenuOpen(false)
-                                        if (link.path === '/') {
-                                            window.scrollTo({ top: 0 })
-                                            return
+
+
+                            <div className="grid grid-cols-1 text-center w-full">
+                                {
+                                    links.map((link, index) => {
+
+                                        if (link.children) {
+                                            return <div
+
+                                                key={index} className="text-xl font-bold relative ">
+
+                                                <span
+                                                    onClick={(e) => {
+
+                                                        if (e.currentTarget.nextElementSibling.classList.contains("max-h-0")) {
+                                                            e.currentTarget.nextElementSibling.classList.replace("max-h-0", "max-h-[200px]")
+                                                        } else {
+                                                            e.currentTarget.nextElementSibling.classList.replace("max-h-[200px]", "max-h-0")
+                                                        }
+
+
+
+                                                    }}
+                                                    className="inline-flex justify-center items-center gap-x-2 py-3 w-full ">
+                                                    {
+                                                        link.text
+                                                    }
+                                                    <FaAngleDown />
+                                                </span>
+
+                                                <div className="transition-all bg-gray-200 max-h-0 overflow-hidden text-md font-normal flex flex-col ">
+
+                                                    {
+                                                        link.children.map((link, index) => <Link
+                                                            key={index}
+                                                            to={link.path}
+                                                            className="py-2 "
+                                                        >
+                                                            {link.text}
+                                                        </Link>)
+                                                    }
+
+                                                </div>
+
+                                            </div>
+                                        } else {
+                                            return <Link
+                                                onClick={() => {
+                                                    setMenuOpen(false);
+
+
+                                                }}
+                                                to={link.path}
+                                                key={index}
+                                                className="py-3 font-bold text-xl">
+                                                {link.text}
+                                            </Link>
                                         }
 
-                                        const section = document.querySelector(link.path);
 
-                                        window.scrollTo({ top: section.offsetTop - 80 })
-                                    }}
-                                    className={'text-xl border-b w-full text-center py-5'} to={link.path} key={index}>
-                                    {
-                                        link.text
-                                    }
-                                </NavLink>)
-                            }
+                                    })
+
+
+                                }
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
                         </motion.div>
