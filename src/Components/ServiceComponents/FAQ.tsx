@@ -1,11 +1,19 @@
 import React from "react";
 import { FaAngleDown } from "react-icons/fa";
 
-interface Items {
+
+interface Answer {
   title: string;
   desc: string;
- 
+  details: number;
 }
+
+
+interface Items {
+  title: string;
+  answer: Answer[];
+}
+
 
 interface Props {
   items: Items[];
@@ -36,11 +44,11 @@ function FAQ({ items }: Props) {
                 ) {
                   e.currentTarget.nextElementSibling?.classList.replace(
                     "max-h-0",
-                    "max-h-[200px]"
+                    "max-h-[500px]"
                   );
                 } else {
                   e.currentTarget.nextElementSibling?.classList.replace(
-                    "max-h-[200px]",
+                    "max-h-[500px]",
                     "max-h-0"
                   );
                 }
@@ -51,9 +59,20 @@ function FAQ({ items }: Props) {
               <FaAngleDown />
             </h3>
 
-            <p className="bg-theme my-3 rounded-2xl transition-all duration-300 text-white max-h-0 overflow-hidden">
-              <span className="inline-block rounded-xl p-5">{item.desc}</span>
-            </p>
+            <div className="max-h-0 overflow-hidden m-3 rounded-2xl transition-all duration-300">
+              <div className="py-3 bg-theme ">
+                {item.answer.map((answer, index) => (
+                  <div
+                    key={index}
+                    className=" text-white p-1 flex flex-wrap spax  rounded-xl px-5 align-middle "
+                  >
+                    <h4 className=" font-extrabold  text-xl ">{answer.title}</h4>
+                    <p className=" inline-block font-bold pl-5  text-lg ">{answer.details}</p>
+                    <p className=" text-lg  font-bold">{answer.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>
