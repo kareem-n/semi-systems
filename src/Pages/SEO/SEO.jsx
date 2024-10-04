@@ -1,4 +1,3 @@
-import React from 'react'
 import PageBanner from '../../Components/pageBanner/PageBanner';
 import Intro from '../../Components/ServiceComponents/Intro';
 import seo from '../../assets/seo.png';

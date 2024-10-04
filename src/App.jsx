@@ -29,7 +29,7 @@ function App() {
         { path: '/mobile', element: <Mobile /> } ,
         { path: '/marketing', element: <Marketing /> } ,
         { path: '/seo', element: <SEO /> } ,
-        { path: '/social ', element: <Social /> } ,
+        { path: '/social', element: <Social /> } ,
         { path: '/portfolio', element: <PortfolioPage /> } ,
         { path: '/blog', element: <Blog /> } ,
         { path: '/faq', element: <FAQ /> } ,

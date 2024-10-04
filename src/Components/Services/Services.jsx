@@ -257,7 +257,7 @@ function Services({ rocket }) {
 
           <Reveal>
 
-            <Link to ="/social ">
+            <Link to ="/social">
             <motion.div
               initial='start'
               whileHover='end'
