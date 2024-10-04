@@ -1,4 +1,3 @@
-import React from 'react'
 import PageBanner from '../../Components/pageBanner/PageBanner';
 import busnines from '../../assets/busnines.png';
 import Intro from '../../Components/ServiceComponents/Intro';
@@ -23,14 +22,6 @@ import Portfolio from '../../Components/ServiceComponents/Portfolio';
 import ExtraContent from '../../Components/ServiceComponents/ExtraContent';
 import ServiceFeedback from '../../Components/ServiceComponents/ServiceFeedback';
 import FAQ from '../../Components/ServiceComponents/FAQ';
-;
-
-
-
-
-
-
-
 
 
 const Busniness = () => {

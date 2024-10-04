@@ -1,4 +1,3 @@
-import React from 'react'
 import PageBanner from '../../Components/pageBanner/PageBanner'
 import Intro from '../../Components/ServiceComponents/Intro';
 import marketing from '../../assets/marketing.png';
@@ -7,7 +6,7 @@ import Important from '../../Components/ServiceComponents/Important';
 import importantAsset from '../../assets/import.png';
 import WhyChooseUs from '../../Components/ServiceComponents/WhyChooseUst';
 import { AiOutlineLike } from 'react-icons/ai';
-import { MdOutlineGroups, MdOutlineGroups2 } from "react-icons/md";
+import { MdOutlineGroups } from "react-icons/md";
 import { GiClockwork } from 'react-icons/gi';
 import { MdLibraryBooks } from 'react-icons/md';
 import { HiOutlineSpeakerphone } from 'react-icons/hi';
@@ -36,7 +35,7 @@ const Marketing = () => {
 
     const IntroMarketingContent = {
         leftImg: marketing,
-        firstContentRight :{
+        firstContentRight: {
             slogan: " إدارة الحملات التسويقية ",
             title: " نُدير حساباتك باحترافية تضمن تحقيق الأهداف المرجوّة ",
             desc: "اجعل حملاتك التسويقية تتألق في سماء النجاح مع خدمتنا الحصرية نقدم لك أداة قوية تهدف لاستحضار أفضل النتائج لحملاتك الإعلانية عبر منصات متعددة. ما يميز خدمتنا هو قدرتها على الوصول إلى جمهور أوسع، وصناعة تأثير عميق يعزز من شهرة علامتك التجارية، ويرفع من مستوى التوعية بها"
@@ -48,22 +47,22 @@ const Marketing = () => {
             title: 'اطلع على رحله المشروع',
             desc: 'استكشف الخطوات التي نتبعها لتحويل فكرتك إلى مشروع ناجح نرافقك في كل مرحلة لضمان تحقيق رؤيتك بأفضل صورة'
         }
-        
+
     }
 
     const ImportantMarketingContent = {
         head: " أهمية إدارة الحملات التسويقية ",
         subTitle: "  إدارة الحملات التسويقية تقدم لك الفرصة للوصول إلى جمهور واسع وتعزيز وجودك الرقمي بفضل استراتيجيات التسويق المتقدمة والإعلانات المبتكرة على المنصات المختلفة.  ",
 
-        items : [
+        items: [
             {
-                title:"زيادة الوعي بالعلامة التجارية",
+                title: "زيادة الوعي بالعلامة التجارية",
                 subTitle: "من خلال استخدام استراتيجيات تسويقية متنوعة وابتكارية يمكن لإدارة الحملات التسويقية زيادة الوعي بالعلامة التجارية للشركة وهذا يساهم في زيادة الاعتراف بالشركة. "
             },
             {
                 title: "  تحقيق الأهداف التسويقية ",
                 subTitle: " إدارة الحملات التسويقية تمكنك من تحقيق أهدافك التسويقية بفعالية وتتضمن زيادة المبيعات وزيادة نسبة التحويل وبناء علاقات قوية مع العملاءالمحتملين. ",
-            }, 
+            },
             {
                 title: "  الوصول للجمهور المستهدف ",
                 subTitle: " تمكنك إدارة الحملات التسويقية من استخدام تقنيات الاستهداف للوصول إلى الجمهور المستهدف بشكل فعال من خلال الاعلانات و المحتوى المتميز. "
@@ -71,7 +70,7 @@ const Marketing = () => {
 
             {
                 title: "  توفير الوقت والجهد ",
-                subTitle:" إدارة الحملات التسويقية خدمة مؤثرة للشركات التي ليس لديها الوقت أو المعرفة أو الموارد لإدارة حملات التسويق بشكل كامل. فبدلاً من ضياع وقتك يمكنك الاعتماد على خبراء المجال. "
+                subTitle: " إدارة الحملات التسويقية خدمة مؤثرة للشركات التي ليس لديها الوقت أو المعرفة أو الموارد لإدارة حملات التسويق بشكل كامل. فبدلاً من ضياع وقتك يمكنك الاعتماد على خبراء المجال. "
             },
             {
                 title: "  رفع مستوى المنافسة",
@@ -90,38 +89,38 @@ const Marketing = () => {
         subTitle: "انضم إلى نقرات لتجربة تطوير حضورك الرقمي بشكل مذهل، واستفد بالكامل من فعالية تصميم المواقع الإلكترونية في تحقيق أهدافك التسويقية. دعنا نواكبك في رحلة النجاح الرقمي!",
         items: [
             {
-                text:" خبرة أعوام ",
-                icon:<AiOutlineLike size={35} />
+                text: " خبرة أعوام ",
+                icon: <AiOutlineLike size={35} />
             },
             {
                 text: " فريق متخصص",
                 icon: <MdOutlineGroups size={35} />
             },
             {
-                text:"سرعة وجودة في العمل",
-                icon:<GiClockwork size={35} />
+                text: "سرعة وجودة في العمل",
+                icon: <GiClockwork size={35} />
             },
             {
-                text:"مواد دعائية مؤثرة",
-                icon:<MdLibraryBooks size={35} />
+                text: "مواد دعائية مؤثرة",
+                icon: <MdLibraryBooks size={35} />
             },
             {
                 text: "عروض مميزة",
                 icon: <HiOutlineSpeakerphone size={35} />
             },
             {
-                text:" سعر تنافسي",
-                icon:<LiaMoneyBillAltSolid size={35} />
+                text: " سعر تنافسي",
+                icon: <LiaMoneyBillAltSolid size={35} />
             },
             {
                 text: "تقارير شاملة عن الحملة الإعلانية",
-                icon:<TbReportSearch size={35} />
+                icon: <TbReportSearch size={35} />
             },
             {
                 text: "خدمة عملاء على مدار الساعة",
                 icon: <RiCustomerService2Fill size={35} />
             },
-           
+
         ]
     }
 
@@ -132,10 +131,10 @@ const Marketing = () => {
             portfolioImg,
             portfolioImg3,
             portfolioImg2,
-            
+
         ]
     }
-    const extraMarketingContent  = {
+    const extraMarketingContent = {
         slogan: 'نقطه التحول',
         title: `نساعدك في بناء حضورك وفقاً لرؤية وأهداف علامتك التجارية`,
         desc: `على عكس ما يعتقد البعض، بناء الحضور الرقمي المثالي ليس عملية عشوائية، بل يعتمد على تخطيط دقيق وجذور متينة ترتكز على رؤية استراتيجية.`,
@@ -152,17 +151,20 @@ const Marketing = () => {
         title: `آراء عملائنا`,
         desc: `نستمد نجاحنا من رضا عملائنا عن الخدمات التي نقدمها`,
         items: [
-            { img: feedBackPerson1, 
-                name: 'mostafa ayman', 
-                desc: 'تجربتي معكم كانت مدهشة. الجودة والدعم فاقا توقعاتي بشكل كبير. لم أتوقع أن أجد فريقًا ملتزمًا بهذه الدرجة من الاحترافية' 
+            {
+                img: feedBackPerson1,
+                name: 'mostafa ayman',
+                desc: 'تجربتي معكم كانت مدهشة. الجودة والدعم فاقا توقعاتي بشكل كبير. لم أتوقع أن أجد فريقًا ملتزمًا بهذه الدرجة من الاحترافية'
             },
-            { img: feedBackPerson1, 
-                name: 'Mohamed fathey', 
-                desc: 'تجربتي معكم كانت مدهشة. الجودة والدعم فاقا توقعاتي بشكل كبير. لم أتوقع أن أجد فريقًا ملتزمًا بهذه الدرجة من الاحترافية' 
+            {
+                img: feedBackPerson1,
+                name: 'Mohamed fathey',
+                desc: 'تجربتي معكم كانت مدهشة. الجودة والدعم فاقا توقعاتي بشكل كبير. لم أتوقع أن أجد فريقًا ملتزمًا بهذه الدرجة من الاحترافية'
             },
-            { img: feedBackPerson1, 
-                name: 'Kareem naser', 
-                desc: 'تجربتي معكم كانت مدهشة. الجودة والدعم فاقا توقعاتي بشكل كبير. لم أتوقع أن أجد فريقًا ملتزمًا بهذه الدرجة من الاحترافية' 
+            {
+                img: feedBackPerson1,
+                name: 'Kareem naser',
+                desc: 'تجربتي معكم كانت مدهشة. الجودة والدعم فاقا توقعاتي بشكل كبير. لم أتوقع أن أجد فريقًا ملتزمًا بهذه الدرجة من الاحترافية'
             },
         ]
     }
@@ -254,7 +256,7 @@ const Marketing = () => {
                     desc: "بالطبع في نقرات يمكننا توجيهك وتقديم استشارات لك حول كيفية تحديد الميزانية الأمثل واستخدامها بكفاءة تامة."
                 }
             ]
-        }
+        },
     ]
 
 
@@ -263,11 +265,11 @@ const Marketing = () => {
 
 
 
-  return (
-    <div>
-        <PageBanner head={' إدارة الحملات التسويقية '} />
+    return (
+        <div>
+            <PageBanner head={' إدارة الحملات التسويقية '} />
 
-        <div className="px-48">
+            <div className="px-48">
                 <Intro
                     leftImg={IntroMarketingContent.leftImg}
                     firstContentRight={IntroMarketingContent.firstContentRight}
@@ -283,7 +285,7 @@ const Marketing = () => {
                 options={ImportantMarketingContent.items}
             />
 
-<div className="px-48 py-20">
+            <div className="px-48 py-20">
                 <WhyChooseUs
                     headTitle={whyUsMarketingContent.headTitle}
                     subTitle={whyUsMarketingContent.subTitle}
@@ -305,7 +307,7 @@ const Marketing = () => {
                 leftImg={extraImg}
             />
 
-                <ServiceFeedback
+            <ServiceFeedback
                 title={feedbackMarketingContent.title}
                 desc={feedbackMarketingContent.desc}
                 items={feedbackMarketingContent.items}
@@ -315,8 +317,8 @@ const Marketing = () => {
 
 
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Marketing

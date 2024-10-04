@@ -131,7 +131,7 @@ function Web() {
             portfolioImg,
             portfolioImg3,
             portfolioImg2,
-            
+
         ]
     }
 
