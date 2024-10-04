@@ -1,17 +1,25 @@
 import React from "react";
 import { FaAngleDown } from "react-icons/fa";
 
+
+interface Answer {
+  title: string;
+  desc: string;
+  details: number;
+}
+
+
 interface Items {
   title: string;
-  desc: string[];
+  answer: Answer[];
 }
+
 
 interface Props {
   items: Items[];
 }
 
 function FAQ({ items }: Props) {
-
   return (
     <div className="my-20 px-48 relative">
       <div className="flex flex-col items-center gap-5">
@@ -36,11 +44,11 @@ function FAQ({ items }: Props) {
                 ) {
                   e.currentTarget.nextElementSibling?.classList.replace(
                     "max-h-0",
-                    "max-h-[200px]"
+                    "max-h-[500px]"
                   );
                 } else {
                   e.currentTarget.nextElementSibling?.classList.replace(
-                    "max-h-[200px]",
+                    "max-h-[500px]",
                     "max-h-0"
                   );
                 }
@@ -53,13 +61,15 @@ function FAQ({ items }: Props) {
 
             <div className="max-h-0 overflow-hidden m-3 rounded-2xl transition-all duration-300">
               <div className="py-3 bg-theme ">
-                {item.desc.map((des, index) => (
-                  <p
+                {item.answer.map((answer, index) => (
+                  <div
                     key={index}
-                    className=" text-white p-1"
+                    className=" text-white p-1 flex flex-wrap spax  rounded-xl px-5 align-middle "
                   >
-                    <span className="inline-block rounded-xl px-5">{des}</span>
-                  </p>
+                    <h4 className=" font-extrabold  text-xl ">{answer.title}</h4>
+                    <p className=" inline-block font-bold pl-5  text-lg ">{answer.details}</p>
+                    <p className=" text-lg  font-bold">{answer.desc}</p>
+                  </div>
                 ))}
               </div>
             </div>
