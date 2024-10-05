@@ -36,13 +36,13 @@ function Navbar() {
                         { path: '/marketing', text: 'إدارة الحملات التسويقية' },
                         { path: '/social', text: 'كتابة المحتوي' },
                         { path: '/seo', text: 'تحسين محركات البحث' },
-                        { path: '/busniness', text: 'تصميم الهوية التجارية' },
                     ]
                 },
                 {
                     text: 'خدمات البرمجة و التصميم', children: [
                         { path: '/web', text: 'تصميم مواقع الكترونية' },
                         { path: '/mobile', text: 'تصميم تطبيقات الجوال' },
+                        { path: '/busniness', text: 'تصميم الهوية التجارية' },
                         { path: '/social', text: 'كتابة المحتوي' },
                         { path: '/seo', text: 'تحسين محركات البحث' },
                     ]
