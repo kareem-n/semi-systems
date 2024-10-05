@@ -31,20 +31,22 @@ function Navbar() {
         {
             path: '/services', text: 'الخدمات', children: [
                 {
-                    text: 'خدمات التسويق الإلكترونية', children: [
-                        { path: '/social', text: 'ادارة حسابات السوشيال ميديا' },
+                    text: 'خدمات التسويق الإلكتروني', children: [
+                        { path: '/social', text: 'ادارة حسابات التواصل الاجتماعي ' },
                         { path: '/marketing', text: 'إدارة الحملات التسويقية' },
-                        { path: '/social', text: 'كتابة المحتوي' },
+                        { path: '/writing', text: 'كتابة المحتوي' },
                         { path: '/seo', text: 'تحسين محركات البحث' },
-                        { path: '/busniness', text: 'تصميم الهوية التجارية' },
                     ]
                 },
                 {
                     text: 'خدمات البرمجة و التصميم', children: [
+                        { path: '/busniness', text: 'تصميم الهوية التجارية' },
+                        { path: '/graphics', text: ' خدمه موشن جرافيك ومونتاج' },
                         { path: '/web', text: 'تصميم مواقع الكترونية' },
                         { path: '/mobile', text: 'تصميم تطبيقات الجوال' },
-                        { path: '/social', text: 'كتابة المحتوي' },
-                        { path: '/seo', text: 'تحسين محركات البحث' },
+                        { path: '/mobile', text: 'تصميم تطبيقات الجوال' },
+                        { path: '/mobile', text: 'تصميم تطبيقات الجوال' },
+
                     ]
                 },
             ]
