@@ -15,8 +15,8 @@ interface Props {
 
 function ExtraContent({ slogan, title, desc, items, leftImg }: Props) {
   return (
-    <div className="my-36 grid grid-cols-2 gap-10 items-center">
-      <div className="pr-40">
+    <div className="my-20 md:my-36 grid md:grid-cols-2 gap-10 items-center px-5 md:px-0">
+      <div className="md:pr-40">
         <p className="text-pink-500">{slogan}</p>
         <h2 className="text-2xl md:text-4xl font-bold py-5">{title}</h2>
 

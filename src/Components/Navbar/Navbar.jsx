@@ -31,20 +31,22 @@ function Navbar() {
         {
             path: '/services', text: 'الخدمات', children: [
                 {
-                    text: 'خدمات التسويق الإلكترونية', children: [
-                        { path: '/social', text: 'ادارة حسابات السوشيال ميديا' },
+                    text: 'خدمات التسويق الإلكتروني', children: [
+                        { path: '/social', text: 'ادارة حسابات التواصل الاجتماعي ' },
                         { path: '/marketing', text: 'إدارة الحملات التسويقية' },
-                        { path: '/social', text: 'كتابة المحتوي' },
+                        { path: '/writing', text: 'كتابة المحتوي' },
                         { path: '/seo', text: 'تحسين محركات البحث' },
                     ]
                 },
                 {
                     text: 'خدمات البرمجة و التصميم', children: [
+                        { path: '/busniness', text: 'تصميم الهوية التجارية' },
+                        { path: '/graphics', text: ' خدمه موشن جرافيك ومونتاج' },
                         { path: '/web', text: 'تصميم مواقع الكترونية' },
                         { path: '/mobile', text: 'تصميم تطبيقات الجوال' },
-                        { path: '/busniness', text: 'تصميم الهوية التجارية' },
-                        { path: '/social', text: 'كتابة المحتوي' },
-                        { path: '/seo', text: 'تحسين محركات البحث' },
+                        { path: '/photography', text: 'التصوير الفوتوغرافي' },
+                        { path: '/e-commerce', text: 'إدارة المتاجر الإلكترونية' },
+
                     ]
                 },
             ]
@@ -349,7 +351,7 @@ function Navbar() {
                                 scale: 0
                             }}
 
-                            className="mt-[60px] pt-5 flex flex-col items-center bg-white h-full text-black">
+                            className="mt-[60px] py-5 flex flex-col items-center bg-white overflow-y-scroll h-full text-black">
 
 
                             <div className="grid grid-cols-1 text-center w-full">
@@ -365,9 +367,9 @@ function Navbar() {
                                                     onClick={(e) => {
 
                                                         if (e.currentTarget.nextElementSibling.classList.contains("max-h-0")) {
-                                                            e.currentTarget.nextElementSibling.classList.replace("max-h-0", "max-h-[200px]")
+                                                            e.currentTarget.nextElementSibling.classList.replace("max-h-0", "max-h-[600px]")
                                                         } else {
-                                                            e.currentTarget.nextElementSibling.classList.replace("max-h-[200px]", "max-h-0")
+                                                            e.currentTarget.nextElementSibling.classList.replace("max-h-[600px]", "max-h-0")
                                                         }
 
 
@@ -381,16 +383,64 @@ function Navbar() {
                                                 </span>
 
                                                 <div className="transition-all bg-gray-200 max-h-0 overflow-hidden text-md font-normal flex flex-col ">
-
                                                     {
-                                                        link.children.map((link, index) => <Link
+                                                        link.children.map((item, index) => <div
+                                                            key={index}
+                                                            // to={item.path}
+                                                            className="bg-theme hover:bg-themeHovered text-nowrap cursor-auto select-none w-full border-b border-b-gray-800 relative"
+
+                                                            onClick={(e) => {
+
+                                                                if (e.currentTarget.lastElementChild.classList.contains("max-h-0")) {
+
+                                                                    e.currentTarget.lastElementChild.classList.replace("max-h-0", "max-h-96");
+                                                                } else {
+                                                                    e.currentTarget.lastElementChild.classList.replace("max-h-96", "max-h-0")
+
+                                                                }
+
+                                                            }}
+
+                                                        >
+                                                            <div
+                                                                className="flex px-8 justify-center text-white items-center py-2 gap-x-4">
+                                                                {item.text}
+                                                                <FaAngleDown />
+                                                            </div>
+
+
+
+
+                                                            <div className="bg-theme text-white transition-all duration-1000 max-h-0 overflow-hidden flex flex-col">
+                                                                {
+                                                                    item.children?.map((fLink, index) => <Link
+
+                                                                        onClick={() => {
+                                                                            setMenuOpen(false);
+
+                                                                        }}
+                                                                        key={index}
+                                                                        to={fLink.path}
+                                                                        className="px-8 py-2 inline-block hover:bg-themeHovered"
+                                                                    >
+                                                                        {fLink.text}
+                                                                    </Link>)
+                                                                }
+                                                            </div>
+                                                        </div>)
+                                                    }
+
+
+                                                    {/* {
+                                                        link.children.map((link, index) => <div
                                                             key={index}
                                                             to={link.path}
-                                                            className="py-2 "
+                                                            className="py-2 flex justify-center items-center gap-x-3"
                                                         >
                                                             {link.text}
-                                                        </Link>)
-                                                    }
+                                                            <FaAngleDown />
+                                                        </div>)
+                                                    } */}
 
                                                 </div>
 

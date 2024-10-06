@@ -48,29 +48,29 @@ function About() {
             <PageBanner head='من نحن' />
 
 
-            <div className="my-20 py-20 px-36">
+            <div className="my-20 md:py-20 px-5 md:px-36">
                 <div className="">
-                    <h2 className="text-theme font-bold text-5xl text-center">
+                    <h2 className="text-theme font-bold text-3xl md:text-5xl text-center">
                         من نكون ؟
                     </h2>
-                    <h2 className="text-center text-4xl mt-2">
+                    <h2 className="text-center font-bold text-xl md:text-4xl mt-2">
                         نحن نُمكّن العلامات التجارية الطموحة لتحقيق نجاحات استثنائية
                     </h2>
 
-                    <p className="text-center mt-4">
-                        نحن وكالة تسويق إلكتروني عالمية نساعد الشركات الرائدة على الابتكار والنمو من خلال استراتيجيات رقمية فعّالة <br />
+                    <p className=" mt-4">
+                        - نحن وكالة تسويق إلكتروني عالمية نساعد الشركات الرائدة على الابتكار والنمو من خلال استراتيجيات رقمية فعّالة <br />
                         نجمع بين خبراتنا المتميزة وشبكة واسعة من المبدعين الرقميين
                         لنحقق نتائج تسويقية تتسم بالكفاءة والسرعة والاستدامة
                     </p>
 
-                    <p className="text-center mt-4">
-                        نؤمن بأن الجرأة في اتخاذ خطوات جديدة هي ما يحدد ملامح النجاح المستقبلي، وأن الطموح للتميز يتطلب الاستعداد<br />
+                    <p className=" mt-4">
+                        - نؤمن بأن الجرأة في اتخاذ خطوات جديدة هي ما يحدد ملامح النجاح المستقبلي، وأن الطموح للتميز يتطلب الاستعداد<br />
                         للتغيير والتطور نحن نعمل مع عملائنا لتحقيق رؤاهم وتجاوز توقعاتهم، ونبحث عن الشركات التي تسعى لتحدي نفسها<br />
                         وتحقيق التميز في عالم التسويق الرقمي نعمل بشغف لخلق قصص نجاح ملهمة ونساعد في تحويل الأفكار إلى إنجازات ملموسة
                     </p>
                 </div>
 
-                <div className="grid grid-cols-4 gap-x-10 mt-10">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-10 mt-10">
                     <div className="">
                         <img src={goal} alt="" />
                     </div>
@@ -86,9 +86,9 @@ function About() {
 
                 </div>
 
-                <div className="my-36 grid grid-cols-2 gap-x-20">
+                <div className="my-36 grid md:grid-cols-2 gap-y-16 gap-x-20">
                     <div className="">
-                        <h2 className="text-5xl font-extrabold flex items-center gap-x-5">
+                        <h2 className="text-3xl md:text-5xl font-extrabold flex items-center gap-x-5">
                             <span className="block w-10 h-10 bg-gray-500 rounded-full"></span>
                             <span>
 
@@ -96,7 +96,7 @@ function About() {
                             </span>
                         </h2>
 
-                        <h2 className="text-5xl font-bold mt-0 leading-normal">
+                        <h2 className="text-2xl md:text-5xl font-bold mt-0 leading-normal">
                             نحن نزيد من نجاح الأعمال من خلال
                             حلول  <span className="text-theme">
                                 التسويق الرقمي
@@ -109,7 +109,7 @@ function About() {
                         </p>
 
 
-                        <div className="mt-10 flex justify-between ">
+                        <div className="mt-10 flex flex-wrap md:flex-nowrap justify-between items-center gap-10 ">
                             <div className="flex items-center gap-x-5">
                                 <PiCertificateDuotone className="text-theme" size={50} />
                                 <div className="">
@@ -135,7 +135,7 @@ function About() {
                         </div>
 
 
-                        <div className="mt-10 flex gap-x-10">
+                        <div className="mt-10 flex items-center gap-x-10">
                             <div className="">
                                 <button className="bg-theme rounded-lg text-white px-6 py-2 flex items-center">
                                     اكتشف المزيد
@@ -168,14 +168,14 @@ function About() {
                         <img src={A} alt="" />
                     </div>
                 </div>
-                <div className="mt-10 flex items-center gap-x-48">
+                <div className="mt-10 flex flex-wrap md:flex-nowrap items-center md:gap-x-48 gap-y-48">
 
                     <div className="flex flex-col items-end relative">
                         <img src={right1} alt="" />
-                        <img src={right2} className="w-[300px] absolute top-full -translate-y-1/2 translate-x-1/2 right-full" alt="" />
+                        <img src={right2} className="w-[300px] absolute top-full -translate-y-1/2 translate-x-1/2 right-2/3 md:right-full" alt="" />
                     </div>
 
-                    <div className="w-1/2 flex flex-col gap-y-4">
+                    <div className="md:w-1/2 flex flex-col gap-y-4">
                         <div className="flex items-center gap-x-8">
                             <div className="bg-gray-200 p-5 rounded-full">
                                 <HiOutlineDocumentSearch size={40} />
@@ -243,8 +243,8 @@ function About() {
 
 
             </div>
-            <div className="bg-gray-200 px-48 my-36 py-20">
-                <div className="p-10 bg-white rounded-lg shadow-2xl grid grid-cols-4">
+            <div className="bg-gray-200 pxp-5 md:px-48 my-36 py-20">
+                <div className="p-10 bg-white rounded-lg shadow-2xl grid grid-cols-2 md:grid-cols-4 gap-10">
                     <div className="flex flex-col items-center">
                         <h3 className="text-4xl font-bold">2,999<span className="text-purple-500">+</span> </h3>
                         <p className="text-xl text-gray-500 mt-2">
@@ -272,7 +272,7 @@ function About() {
                 </div>
             </div>
 
-            <div className="px-48 mb-20">
+            <div className="px-5 md:px-48 mb-20">
                 <div className="relative py-2 flex flex-col items-center">
                     <h2 className="text-4xl ">
                         لماذا نحن
@@ -284,7 +284,7 @@ function About() {
                     <img src={whyUs} alt="" />
                 </div>
 
-                <div className="mt-20 px-36 grid grid-cols-3 gap-x-6">
+                <div className="mt-10 md:mt-20 px-5 md:px-36 grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6">
                     <div className="flex flex-col gap-y-4 items-center p-5 bg-white shadow-lg rounded-xl text-center">
                         <IoRocketOutline color="orange" size={50} />
                         <h3 className="text-xl font-bold">
@@ -317,7 +317,7 @@ function About() {
                 </div>
             </div>
 
-            <div className="px-48 my-20 grid grid-cols-2 items-center gap-x-20">
+            <div className="px-5 md:px-48 my-20 grid md:grid-cols-2 gap-y-10 items-center gap-x-20">
                 <div className="">
                     <h2 className="text-4xl text-theme">
                         النجاح :
@@ -339,15 +339,15 @@ function About() {
                     <img src={comLeft} alt="" />
                 </div>
             </div>
-            <div className="px-48 relative my-48 grid grid-cols-2 items-center gap-x-20">
+            <div className="px-5 md:px-48 relative z-40 my-48 grid md:grid-cols-2 gap-y-20 items-center gap-x-20">
 
-                <img src={rect} className="absolute right-0 bottom-full translate-y-1/2" alt="" />
+                <img src={rect} className="absolute z-10 right-0 bottom-full translate-y-1/2" alt="" />
 
-                <div className="relative">
+                <div className="relative z-40">
                     <img src={comRight} alt="" />
                 </div>
 
-                <div className="">
+                <div className="relative z-40">
                     <h2 className="text-4xl text-theme">
                         الفعالية :
                     </h2>
@@ -367,20 +367,20 @@ function About() {
             </div>
 
 
-            <div className="px-48 pb-20">
+            <div className="px-4 md:px-48 pb-20">
                 <div className="flex flex-col relative">
                     <img src={s3} className="w-[150px] self-end ml-24" alt="" />
                     <img src={s1} className="w-[200px]" alt="" />
                     <img src={s2} className="w-[200px] self-end" alt="" />
 
-                    <div className="absolute inset-0 px-36 flex items-center justify-center">
+                    <div className="absolute inset-0 md:px-36 flex items-center justify-center">
                         <div className="bg-gray-400/20 backdrop-blur-md p-10 w-full rounded-xl shadow-xl">
 
                             <Slider {...settings}>
 
                                 <div className="p-1 py-10">
                                     <div className="flex flex-col gap-y-5 items-center">
-                                        <p className="text-center px-20">
+                                        <p className="text-center md:px-20">
                                             حبيت أشكركم أنتم كنتم شريكًا استراتيجيًا وليس مجرد شركة تسويق
                                             خطتنا التسويقية حققت الهدف بشكل ممتاز وأنا متحمس لاستمرار العمل معكم لتوسيع نطاق النجاح الذي حققناه. آمل أن نواصل تطوير استراتيجيات جديدة ومبتكرة تعزز من تواجدنا في السوق وتحقق المزيد من الإنجازات.
                                         </p>
@@ -414,7 +414,7 @@ function About() {
 
 
                                 </div>
-                                
+
                             </Slider>
 
                         </div>

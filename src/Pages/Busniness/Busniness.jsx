@@ -78,7 +78,7 @@ const Busniness = () => {
 
     const whyUsBusniessContent = {
         headTitle: 'لماذا عليك اختيارنا؟',
-        subTitle: "انضم إلى نقرات لتجربة تطوير حضورك الرقمي بشكل مذهل، واستفد بالكامل من فعالية تصميم المواقع الإلكترونية في تحقيق أهدافك التسويقية. دعنا نواكبك في رحلة النجاح الرقمي!",
+        subTitle: "العمل مع زاهي سيمكنك من تطوير حضورك الرقمي والاستفادة الكاملة من قوة   خدمة الموشن جرافيك في تحقيق أهدافك التسويقية .",
         items: [
             {
                 text:" خبرة أعوام ",
@@ -267,7 +267,7 @@ const Busniness = () => {
     <div>
             <PageBanner head={'تصميم الهوية التجارية'} />
 
-            <div className="px-48">
+            <div className="px-5 md:px-48">
                 <Intro
                     leftImg={IntroBusninessContent.leftImg}
                     firstContentRight={IntroBusninessContent.firstContentRight}
@@ -284,7 +284,7 @@ const Busniness = () => {
             />
 
 
-            <div className="px-48 py-20">
+            <div className="px-5 md:px-48 py-20">
                 <WhyChooseUs
                     headTitle={whyUsBusniessContent.headTitle}
                     subTitle={whyUsBusniessContent.subTitle}

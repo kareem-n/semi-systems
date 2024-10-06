@@ -13,6 +13,10 @@ import Mobile from "./Pages/Mobile/Mobile"
 import Marketing from "./Pages/Marketing/Marketing"
 import SEO from "./Pages/SEO/SEO"
 import Social from "./Pages/Sochial/Social"
+import Writing from "./Pages/Writing/Writing"
+import Graphics from "./Pages/Graphics/Graphics"
+import Photography from "./Pages/Photography/Photography"
+import ECommerce from "./Pages/E-commerce/ECommerce"
 
 
 
@@ -30,6 +34,10 @@ function App() {
         { path: '/marketing', element: <Marketing /> } ,
         { path: '/seo', element: <SEO /> } ,
         { path: '/social', element: <Social /> } ,
+        { path: '/writing', element: <Writing /> } ,
+        { path: '/graphics', element: <Graphics /> } ,
+        { path: '/photography', element: <Photography /> } ,
+        { path: '/e-commerce', element: <ECommerce /> } ,
         { path: '/portfolio', element: <PortfolioPage /> } ,
         { path: '/blog', element: <Blog /> } ,
         { path: '/faq', element: <FAQ /> } ,

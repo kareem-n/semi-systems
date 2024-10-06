@@ -56,7 +56,7 @@ function ServiceFeedback({ title, desc, items }: Props) {
   };
   return (
     <div className="mb-20 py-48 relative">
-      <div className="absolute w-full -top-1/3 left-0 rotate-[3deg]">
+      <div className="absolute w-full top-1/4 md:-top-1/3 left-0 rotate-[3deg]">
         <svg
           width="100%"
           height="100%"
@@ -94,13 +94,13 @@ function ServiceFeedback({ title, desc, items }: Props) {
         </svg>
       </div>
 
-      <div className="relative px-48">
+      <div className="relative px-5 md:px-48">
         <div className="flex flex-col items-center gap-y-3">
           <h2 className="text-2xl md:text-4xl font-bold">{title}</h2>
           <p className="text-xl">{desc}</p>
         </div>
 
-        <div className="mt-10 px-20">
+        <div className="mt-10 px-5 md:px-20">
           <Slider {...settings}>
             {items.map((item, index) => (
               <div className=" pb-4">

@@ -43,7 +43,7 @@ function Blog() {
         <div>
 
             <PageBanner head={'المدونه'} />
-            <div className="my-20 px-48">
+            <div className="my-20 px-5 md:px-48">
 
                 <div className="">
                     {

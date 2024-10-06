@@ -9,12 +9,12 @@ interface Props {
 function Portfolio({ headTitle, subTitle, items }: Props) {
   return (
     <div className="mt-36 ">
-      <div className="flex flex-col items-center gap-y-3">
+      <div className="flex flex-col items-center text-center gap-y-3">
         <h2 className="text-2xl md:text-4xl font-bold">{headTitle}</h2>
         <p className="font-light">{subTitle}</p>
       </div>
 
-      <div className="mt-10 grid grid-cols-3 gap-9">
+      <div className="mt-10 grid md:grid-cols-3 gap-9">
         {items.map((item, index) => (
           <div key={index} className="">
             <img src={item} alt="" />

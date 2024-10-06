@@ -21,7 +21,7 @@ interface Props {
 
 function FAQ({ items }: Props) {
   return (
-    <div className="my-20 px-48 relative">
+    <div className="md:my-20 px-5 md:px-48 relative">
       <div className="flex flex-col items-center gap-5">
         <h3 className="bg-green-300 text-green-600 font-semibold px-8 py-1 rounded-full">
           F.A.Q

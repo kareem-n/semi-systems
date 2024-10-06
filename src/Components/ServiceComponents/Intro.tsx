@@ -26,7 +26,7 @@ function Intro({
 }: Props) {
   return (
     <div className="my-20">
-      <div className="grid grid-cols-2 items-center gap-x-10">
+      <div className="grid md:grid-cols-2 gap-y-10 items-center gap-x-10">
         <div className="">
           <p className="text-pink-500 text-md font-bold capitalize">
             {firstContentRight.slogan}
@@ -43,7 +43,7 @@ function Intro({
         </div>
       </div>
 
-      <div className="grid grid-cols-2 items-center gap-x-20 mt-20">
+      <div className="grid md:grid-cols-2 gap-y-10 items-center gap-x-20 mt-20">
         <div className="p-20">
           <img src={rightImg} className="w-full" alt="" />
         </div>

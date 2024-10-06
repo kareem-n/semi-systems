@@ -7,16 +7,16 @@ function Footer() {
 
 
     const services = [
-        'تصميم المواقع',
-        'تطبيقات الجوال',
-        'إدارة الحملات التسويقية',
-        'إدارة حسابات التواصل الاجتماعي',
-        'تصميم الهوية التجارية',
-        'تحسين محركات البحث'
+        { text: 'تصميم المواقع', path: '/web' },
+        { text: 'تطبيقات الجوال', path: '/mobile' },
+        { text: 'إدارة الحملات التسويقية', path: '/marketing' },
+        { text: 'إدارة حسابات التواصل الاجتماعي', path: '/social' },
+        { text: 'تصميم الهوية التجارية', path: '/brand' },
+        { text: 'تحسين محركات البحث', path: '/seo' },
     ]
 
     const importantLinks = [
-        { text: 'من نحن', path: '/#about' },
+        { text: 'من نحن', path: '/about' },
         { text: 'اتصل بنا', path: '/#' },
         { text: 'سياسة الخصوصية', path: '/' },
         { text: 'اتفاقية الاستخدام', path: '/' },
@@ -47,9 +47,17 @@ function Footer() {
 
                     <div className="flex flex-col items-start gap-y-3 mt-5 text-md">
                         {
-                            services.map((link, index) => <NavLink key={index} className={'flex hover:text-themeHovered items-center gap-x-2'}>
+                            services.map((link, index) => <NavLink
+                                onClick={() => {
+                                    window.scrollTo({
+                                        top: 0
+                                    })
+                                }}
+                                to={link.path}
+                                key={index}
+                                className={'flex hover:text-themeHovered items-center gap-x-2'}>
                                 <FaExternalLinkAlt size={12} className="text-gray-500" />
-                                {link}
+                                {link.text}
                             </NavLink>)
                         }
                     </div>
@@ -62,21 +70,15 @@ function Footer() {
 
                     <div className="flex flex-col items-start gap-y-3 mt-5 text-md">
                         {
-                            importantLinks.map((link, index) => <NavLink 
-                            to={link.path}
-                             key={index} 
-                             className={'flex  hover:text-themeHovered items-center gap-x-2'}
-                             
-                             onClick={()=> {
-                                if (link.path === '/') {
+                            importantLinks.map((link, index) => <NavLink
+
+                                to={link.path}
+                                key={index}
+                                className={'flex  hover:text-themeHovered items-center gap-x-2'}
+
+                                onClick={() => {
                                     window.scrollTo({ top: 0 })
-                                    return
-                                }
-
-                                const section = document.querySelector(link.path);
-
-                                window.scrollTo({ top: section.offsetTop - 80 })
-                             }}>
+                                }}>
                                 <FaExternalLinkAlt size={12} className="text-gray-500" />
                                 {link.text}
                             </NavLink>)

@@ -14,11 +14,11 @@ interface Props {
 function WhyChooseUs({ headTitle, subTitle, items }: Props) {
   return (
     <div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center text-center">
         <h2 className="text-2xl md:text-4xl font-bold">{headTitle}</h2>
         <p className="py-3 font-light">{subTitle}</p>
       </div>
-      <div className="mt-10 grid grid-cols-4 gap-5">
+      <div className="mt-10 grid grid-cols-2  md:grid-cols-4 gap-5">
         {items.map((item, index) => (
           <div key={index} className="bg-white shadow-xl rounded-lg flex flex-col gap-y-3 items-center py-5">
             <span>{item.icon}</span>
