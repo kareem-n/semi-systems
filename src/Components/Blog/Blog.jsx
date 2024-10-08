@@ -63,10 +63,10 @@ function Blog() {
                   });
 
                   return <div key={blog._id} className="relative ">
-                    <img src={urlFor(blog.mainImage)} alt="" />
+                    <img src={urlFor(blog.image)} alt="" />
                     <div className="h-[300px] bg-white flex flex-col items-start px-4 py-8 rounded-lg shadow-2xl absolute -bottom-1/2 w-[80%] left-1/2 -translate-x-1/2">
                       <p className="px-5 py-1 bg-theme text-white rounded-full font-light text-sm">
-                        {blog.slug}
+                        {blog.badge}
                       </p>
                       <h3 className="text-2xl font-semibold mt-4 underline">
                         {blog.title}
@@ -77,7 +77,6 @@ function Blog() {
 
                           {
                             time
-
                           }
                         </p>
                       </div>
@@ -86,7 +85,7 @@ function Blog() {
 
                         className={customEllipsis + " mt-3 text-gray-600 w-full"}>
                         {
-                          blog.description
+                          blog.miniDescription
                         }
                       </p>
                     </div>

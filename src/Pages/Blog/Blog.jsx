@@ -2,20 +2,44 @@ import { useEffect, useState } from "react"
 import PageBanner from "../../Components/pageBanner/PageBanner"
 import client, { urlFor } from "../../Utils/Sanity"
 import { Bars } from "react-loader-spinner";
-import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleLeft, FaCalendarCheck, FaClock, FaComment } from "react-icons/fa";
 
 function Blog() {
 
 
-    const [BlogData, setBlogData] = useState(null);
+    const [bannerBlogData, setBannerBlogData] = useState(null);
+    const [recentBlogData, setRecentBlogData] = useState(null);
     const [Loading, setLoading] = useState(true);
 
 
     function getBlogDat() {
 
-        client.fetch(`*[_type=='blog']`)
+
+        const query = `{
+            "banner": *[_type=='blog'] [0...4] {
+            _id ,
+            _createdAt ,
+            title, 
+            image,
+            miniDescription ,
+            comments, 
+            }, 
+            "recent": *[_type=='blog'] | order(_createdAt desc)[0...2]{
+                _id ,
+            _createdAt ,
+            title, 
+            image,
+            miniDescription ,
+            comments, 
+            }
+        }`
+
+        client.fetch(query)
             .then(res => {
-                setBlogData(res);
+                console.log(res);
+
+                setBannerBlogData(res.banner);
+                setRecentBlogData(res.recent);
                 setLoading(false);
 
             })
@@ -35,6 +59,8 @@ function Blog() {
 
 
 
+    const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
     const date = new Date();
 
 
@@ -43,91 +69,185 @@ function Blog() {
         <div>
 
             <PageBanner head={'المدونه'} />
-            <div className="my-20 px-5 md:px-48">
+            <div className="my-20 px-5 md:px-36">
+                {
+                    Loading ? <div className="flex py-20 md:py-36 items-center justify-center">
+                        <Bars height={100} width={100} color="blue" />
+                    </div> : bannerBlogData && <div className="">
 
-                <div className="">
-                    {
-                        Loading ? <div className="flex items-center justify-center py-10">
-                            <Bars color="blue" />
-                        </div> : <div className="grid grid-cols-3 grid-rows-1 gap-x-10">
-                            <div className="col-span-1 p-2 row-span-1 grid grid-cols-1 ">
-                                {
-                                    BlogData.slice(1, 4).map(item => <div key={item._id} className="rounded-xl overflow-hidden  col-span-2 row-span-1 h-[200px]">
-                                        <img src={urlFor(item.mainImage)} className="h-full w-full object-cover" alt="" />
-                                        {item.slug}
-                                    </div>)
+                        <div className="flex flex-col items-center">
+                            <p className="text-gray-500 text-xl mb-2">
+                                منشور مدونة
+                            </p>
+                            <h2 className="text-4xl font-bold">
+                                أحدث أخبار <span className="text-theme">
+                                    شركتنا
+                                </span>
 
-                                }
-                            </div>
+                            </h2>
+                        </div>
 
+                        <div className="grid grid-cols-2 grid-rows-3 gap-10 mt-10 ">
 
+                            <div className="row-span-3 col-start-1 row-start-1">
 
-                            <div className="col-span-2 row-span-1 relative rounded-xl overflow-hidden">
-                                <img src={urlFor(BlogData[1].mainImage)} className="w-full object-cover" alt="" />
-                                <div className="absolute inset-0 bg-black/30">
-                                    <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
-                                        <div className="text-sm flex items-center gap-x-1 text-gray-200">
+                                <div className="rounded-xl overflow-hidden shadow-xl">
+                                    <img src={urlFor(bannerBlogData[0].image)} className="w-full h-[400px] object-cover" alt="" />
+                                </div>
 
-                                            <span className="p-2 rounded-full">
-                                                {date.getFullYear(BlogData[0]._createdAt)}
-                                                -{date.getMonth(BlogData[0]._createdAt)}
-                                                -{date.getDate(BlogData[0]._createdAt)}
-                                            </span>
-                                            <span className="w-2 h-2 bg-theme rounded-full"></span>
-                                            <span className="p-2 rounded-full">
-                                                {BlogData[0].slug}
-                                            </span>
+                                <div className="py-4 px-3">
+                                    <h2 className="text-2xl font-bold">
+                                        {bannerBlogData[0].title}
+                                    </h2>
 
-
+                                    <div className="text-sm flex items-center gap-x-10 mt-3">
+                                        <div className="flex items-center gap-2 text-gray-500">
+                                            com 0
+                                            <FaComment size={20} className="text-theme" />
                                         </div>
-                                        <h2 className="text-4xl font-bold mt-2">
-                                            {BlogData[0].title}
-                                        </h2>
+                                        <div className="flex items-center gap-2 text-gray-500">
+                                            {date.getFullYear(bannerBlogData[0]._createdAt)}
+                                            -{date.getMonth(bannerBlogData[0]._createdAt)}-
+                                            {date.getDate(bannerBlogData[0]._createdAt)}
+                                            <FaCalendarCheck size={20} className="text-theme" />
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-3 flex flex-col items-start">
+                                        <p className="text-lg">
+                                            {
+                                                bannerBlogData[0].miniDescription
+                                            }
+                                        </p>
+
+                                        <div className="text-green-800 hover:text-green-600 font-bold flex items-center gap-x-3 mt-4 cursor-pointer">
+                                            Read more
+                                            <FaAngleLeft size={22} />
+                                        </div>
 
                                     </div>
+
+
                                 </div>
                             </div>
-                        </div>
-                    }
 
-
-                    <div className="py-20">
-                        <div className="flex items-center justify-between">
-                            <h2 className="font-bold text-4xl">الأكثر قراءة </h2>
-                            <button className="bg-theme hover:bg-themeHovered text-white px-6 py-2 rounded-full">
-                                عرض الكل
-                            </button>
-                        </div>
-
-                        <div className="grid grid-cols-3 mt-10 gap-10">
                             {
-                                BlogData?.map(item => <div key={item._id} className="rounded-xl overflow-hidden shadow-xl">
-                                    <img src={urlFor(item.mainImage)} className="w-full h-[250px] object-cover" alt="" />
-                                    <div className="p-5">
-                                        <p className="text-[12px] inline-block px-4 py-1 rounded-full opacity-80 bg-theme text-white">
-                                            {item.slug}
-                                        </p>
-                                        <h3 className="font-bold text-xl mt-3">
-                                            {item.title}
-                                        </h3>
+                                bannerBlogData.slice(1, 4).map(item => <div
+                                    key={item._id}
+                                    className="flex gap-x-5">
 
-                                        <div className="mt-7">
-                                            <span className="inline-block w-full h-[1px] bg-gray-500/30"></span>
-                                            <button className="text-lg p-3 text-green-600 hover:text-green-700 flex items-center gap-x-3">قراءة المزيد
-                                                <FaAngleLeft />
-                                            </button>
+                                    <img src={urlFor(item.image)} className="w-1/4" alt="" />
+
+                                    <div className="">
+                                        <h2 className="text-xl font-bold">
+                                            {item.title}
+                                        </h2>
+
+                                        <div className="text-sm flex items-center gap-x-10 mt-3">
+                                            <div className="flex items-center gap-2 text-gray-500">
+                                                com {item.comments?.length}
+                                                <FaComment size={20} className="text-theme" />
+                                            </div>
+                                            <div className="flex items-center gap-2 text-gray-500">
+                                                {date.getFullYear(bannerBlogData[0]._createdAt)}
+                                                -{date.getMonth(bannerBlogData[0]._createdAt)}-
+                                                {date.getDate(bannerBlogData[0]._createdAt)}
+                                                <FaCalendarCheck size={20} className="text-theme" />
+                                            </div>
+                                        </div>
+
+                                        <p className="text-lg mt-2">
+                                            {
+                                                bannerBlogData[0].miniDescription
+                                            }
+                                        </p>
+
+                                        <div className="text-green-800 hover:text-green-600 font-bold flex items-center gap-x-3 mt-4 cursor-pointer">
+                                            Read more
+                                            <FaAngleLeft size={22} />
                                         </div>
                                     </div>
+
+
                                 </div>)
                             }
+
+
+
+
+
                         </div>
 
+                        <div className="my-20 py-10 p-4">
+
+                            <h2 className="font-bold text-4xl text-center">
+                                المقالات <span className="text-theme">
+                                    الحديثة
+                                </span>
+                            </h2>
+                            <div className="grid grid-cols-2 gap-20 mt-10">
+                                {
+                                    recentBlogData.map(item => <div key={item._id} className="">
+
+                                        <img src={urlFor(item.image)} className="w-full" alt="" />
+                                        <div className="relative">
+
+
+                                            <div className="absolute bg-blue-500 text-white/75 rounded-lg p-3 top-0 -translate-y-1/2 mr-4 right-0 flex flex-col items-center font-bold text-sm">
+                                                <span>
+                                                    {date.getDate(item._createdAt)}
+                                                </span>
+                                                <span>
+                                                    {month[date.getMonth(item._createdAt)]}
+                                                </span>
+                                            </div>
+                                            <div className="pr-28 py-4 text-gray-500 flex items-center gap-x-5">
+                                                <div className="flex items-center gap-x-1">
+                                                    <FaClock />
+                                                    {date.getHours(item._createdAt)}:
+                                                    {date.getMinutes(item._createdAt)}
+                                                </div>
+                                                <div className="flex items-center gap-x-1">
+                                                    <FaComment />
+                                                    com 0
+                                                </div>
+
+
+
+                                            </div>
+
+                                            <h2 className="font-bold py- text-2xl">
+                                                {
+                                                    item.title
+                                                }
+                                            </h2>
+                                            <p>
+                                                {
+                                                    item.miniDescription
+                                                }
+                                            </p>
+
+                                            <div className="text-green-800 hover:text-green-600 font-bold flex items-center gap-x-3 mt-4 cursor-pointer">
+                                            Read more
+                                            <FaAngleLeft size={22} />
+                                        </div>
+
+
+                                        </div>
+
+                                    </div>)
+                                }
+
+                            </div>
+
+                        </div>
+
+
+
                     </div>
+                }
 
 
-
-
-                </div>
 
             </div>
 
