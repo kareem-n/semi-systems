@@ -3,12 +3,14 @@ import PageBanner from "../../Components/pageBanner/PageBanner"
 import client, { urlFor } from "../../Utils/Sanity"
 import { Bars } from "react-loader-spinner";
 import { FaAngleLeft, FaCalendarCheck, FaClock, FaComment } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 function Blog() {
 
 
     const [bannerBlogData, setBannerBlogData] = useState(null);
-    const [recentBlogData, setRecentBlogData] = useState(null);
+    // const [recentBlogData, setRecentBlogData] = useState(null);
+    const [mostViewed, setMostViewed] = useState(null);
     const [Loading, setLoading] = useState(true);
 
 
@@ -31,7 +33,17 @@ function Blog() {
             image,
             miniDescription ,
             comments, 
-            }
+            } ,
+            "mostViewed": *[_type == "blog" && defined(viewCount)] | order(viewCount desc){
+                _id ,
+            _createdAt ,
+            viewCount ,
+            badge ,
+            title, 
+            image,
+            miniDescription ,
+            comments, 
+            } ,
         }`
 
         client.fetch(query)
@@ -39,7 +51,8 @@ function Blog() {
                 console.log(res);
 
                 setBannerBlogData(res.banner);
-                setRecentBlogData(res.recent);
+                // setRecentBlogData(res.recent);
+                setMostViewed(res.mostViewed);
                 setLoading(false);
 
             })
@@ -87,7 +100,7 @@ function Blog() {
                             </h2>
                         </div>
 
-                        <div className="grid grid-cols-2 grid-rows-3 gap-10 mt-10 ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-3 gap-10 mt-10 ">
 
                             <div className="row-span-3 col-start-1 row-start-1">
 
@@ -136,7 +149,7 @@ function Blog() {
                                     key={item._id}
                                     className="flex gap-x-5">
 
-                                    <img src={urlFor(item.image)} className="w-1/4" alt="" />
+                                    <img src={urlFor(item.image)} className="w-1/4 object-cover" alt="" />
 
                                     <div className="">
                                         <h2 className="text-xl font-bold">
@@ -181,64 +194,72 @@ function Blog() {
                         <div className="my-20 py-10 p-4">
 
                             <h2 className="font-bold text-4xl text-center">
-                                المقالات <span className="text-theme">
-                                    الحديثة
+                                الاكثر <span className="text-theme">
+                                    قراءة
                                 </span>
                             </h2>
-                            <div className="grid grid-cols-2 gap-20 mt-10">
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mt-10">
                                 {
-                                    recentBlogData.map(item => <div key={item._id} className="">
+                                    mostViewed?.map(item => <motion.div
 
-                                        <img src={urlFor(item.image)} className="w-full" alt="" />
-                                        <div className="relative">
+                                        whileHover={'hovered'}
 
+                                        key={item._id} className="">
 
-                                            <div className="absolute bg-blue-500 text-white/75 rounded-lg p-3 top-0 -translate-y-1/2 mr-4 right-0 flex flex-col items-center font-bold text-sm">
-                                                <span>
-                                                    {date.getDate(item._createdAt)}
-                                                </span>
-                                                <span>
-                                                    {month[date.getMonth(item._createdAt)]}
-                                                </span>
-                                            </div>
-                                            <div className="pr-28 py-4 text-gray-500 flex items-center gap-x-5">
-                                                <div className="flex items-center gap-x-1">
-                                                    <FaClock />
-                                                    {date.getHours(item._createdAt)}:
-                                                    {date.getMinutes(item._createdAt)}
+                                        <div className="h-[300px] rounded-lg overflow-hidden shadow-md">
+                                            <motion.img
+                                                variants={{
+                                                    hovered: { scale: 1.1 }
+                                                }}
+
+                                                src={urlFor(item.image)} className="w-full h-full object-cover block" alt="" />
+                                        </div>
+
+                                        <div className="px-4 py-4">
+
+                                            <div className="flex items-center gap-x-5 pb-3 text-sm">
+                                                <div className="">
+                                                    <span className="text-gray-500 ">
+                                                        {date.getDate(item._createdAt)}-
+                                                        {date.getFullYear(item._createdAt)}-
+                                                        {month[date.getMonth(item._createdAt)]}
+
+                                                    </span>
                                                 </div>
-                                                <div className="flex items-center gap-x-1">
-                                                    <FaComment />
-                                                    com 0
-                                                </div>
-
-
+                                                <span className="inline-block w-2 h-2 bg-theme rounded-full"></span>
+                                                <p className="bg-theme text-white px-5 py-1 rounded-full">
+                                                    {item.badge}
+                                                </p>
 
                                             </div>
 
-                                            <h2 className="font-bold py- text-2xl">
-                                                {
-                                                    item.title
-                                                }
-                                            </h2>
-                                            <p>
-                                                {
-                                                    item.miniDescription
-                                                }
+                                            <motion.h2
+
+                                                variants={{
+                                                    hovered: { textDecoration: 'underline' },
+                                                    none: { textDecoration: 'none' },
+                                                }}
+
+                                                className="text-2xl font-bold">
+                                                {item.title}
+                                            </motion.h2>
+
+                                            <p className="text-gray-600 my-3">
+                                                {item.miniDescription}
                                             </p>
 
                                             <div className="text-green-800 hover:text-green-600 font-bold flex items-center gap-x-3 mt-4 cursor-pointer">
-                                            Read more
-                                            <FaAngleLeft size={22} />
+                                                Read more
+                                                <FaAngleLeft size={22} />
+                                            </div>
+
                                         </div>
 
-
-                                        </div>
-
-                                    </div>)
+                                    </motion.div>)
                                 }
-
                             </div>
+
 
                         </div>
 
